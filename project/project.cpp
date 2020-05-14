@@ -17,12 +17,30 @@ struct percolate_tf{
 void randomly_fill_matrix (Eigen::MatrixXi & M, const float prob, const int seed, std::vector<bool> & visit);
 void dfs (Eigen::MatrixXi & M, std::vector<bool> & visit, percolate_tf & perc, std::vector<cluster_attributes> & cl_att_vect);
 void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int array_coef, percolate_tf & perc, cluster_attributes & cl_att);
+double largest_cluster(std::vector<cluster_attributes>  cl_att_v);
+void cluster_series_generate (int seed, unsigned int N, float & number_of_perc, float & sum_l_cl, float prob);
 
 int main(void)
 {
-  int seed=1;
-  int N=20;
-  float prob=0.3;
+  float number_of_perc=0; //variable para la cantidad de clusters percolantes en la muestra
+  unsigned int N=20;
+  float prob=0.6;
+  float sum_l_cl=0; //variable para la sumatoria de los clusters
+  for (int seed=0; seed<N; seed++)
+    {
+      cluster_series_generate(seed, N, number_of_perc, sum_l_cl, prob);
+    }
+  float perc_prob = number_of_perc/N;
+  float average = sum_l_cl/N;
+  std::cout<<"largest cluster avg. "<<average<<std::endl;
+  std::cout<<"perc prob "<<perc_prob<<std::endl;
+  return 0;
+}
+
+
+
+void cluster_series_generate (int seed, unsigned int N, float & number_of_perc, float & sum_l_cl, float prob)
+{
   Eigen::MatrixXi X (N,N);
   std::vector<bool> visited (X.size(), false); //generacion de un vector tamaño nxn tipo bool que se usa como check para el dfs
   std::vector<cluster_attributes> cl_att_vect;
@@ -31,21 +49,34 @@ int main(void)
   dfs (X, visited, perc, cl_att_vect);
   std::cout<< X <<"\n"<< std::endl;
   std::cout<<"id \t"<< "size \t"<<std::endl;
-  
-  /* for (int i=0; i<cl_att_vect.size(); i++){
-     std::cout<<cl_att_vect.at(i)<<std::endl;
-     }*/
-  for (const auto cluster : cl_att_vect)
-    {
-      std::cout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<std::endl;
-    }
-  std::cout<<"percola:"<<perc.aux_perc<<std::endl;
-  std::vector<bool>().swap(visited); //forma sugerida por google para liberar la memoria de un vector
-
-
-  
-  return 0;
+      
+  for (const auto cluster : cl_att_vect){
+    std::cout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<std::endl;
+  }
+      
+  if (perc.aux_perc==true){
+    number_of_perc += 1;
+  }
+        
+      std::cout<<"percola:"<<perc.aux_perc<<std::endl;
+      std::vector<bool>().swap(visited); //forma sugerida por google para liberar la memoria de un vector
+      sum_l_cl += largest_cluster(cl_att_vect);
 }
+
+double largest_cluster(std::vector<cluster_attributes>  cl_att_v)
+{
+  float max=0;
+  for (const auto cluster : cl_att_v)
+    {
+      if(cluster.cluster_size > max)
+	{
+	  max = (float)cluster.cluster_size;  
+	}
+      else continue;
+    }
+  return max;
+}
+
 
 
 void randomly_fill_matrix (Eigen::MatrixXi & M, const float prob, const int seed, std::vector<bool> & visit)
@@ -99,21 +130,15 @@ void dfs (Eigen::MatrixXi & M, std::vector<bool> & visit, percolate_tf & perc, s
 
 void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int array_coef, percolate_tf & perc, cluster_attributes & cl_att)
 {
-  /*int aux_mtoa_coef = (n*M.cols())+m;*/ //array_coef esta haciendo el trabajo //conversion de los coeficientes tipo matriz a tipo array
-
-  
-  //todavia no implementado, revisa si el cluster es percolante
   if(n < 0 || n >= M.cols() || m < 0 || m >= M.rows()) //condicion para las fronteras de la matriz
     {
       return;
     }
 
-  if(visit[array_coef] == true) //evita las casillas visitadas
-    {
+  if(visit[array_coef] == true){ //evita las casillas visitadas   
       return;
     }
-  if( M(n,m) == cl_att.cluster_id )
-    {
+  if( M(n,m) == cl_att.cluster_id ) {
       return;
     }
   if (n==0){
@@ -129,8 +154,7 @@ void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int 
     perc.aux_bottom=true;
   }
   
-  if ((perc.aux_left && perc.aux_right) || (perc.aux_top && perc.aux_bottom) == true)
-    {
+  if ((perc.aux_left && perc.aux_right) || (perc.aux_top && perc.aux_bottom) == true) {
       perc.aux_perc = true; //indica si se encontró un cluster percolante
     }
   
@@ -143,8 +167,9 @@ void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int 
 
   dfs_aux (M, visit, n, m+1, array_coef+1, perc, cl_att);
   dfs_aux (M, visit, n, m-1, array_coef-1, perc, cl_att);
-  dfs_aux (M, visit, n+1, m, array_coef+M.cols(), perc, cl_att);
   dfs_aux (M, visit, n-1, m, array_coef-M.cols(), perc, cl_att);
+  dfs_aux (M, visit, n+1, m, array_coef+M.cols(), perc, cl_att);
+
 
   //^^ busca en las casillas adyacentes
 }
