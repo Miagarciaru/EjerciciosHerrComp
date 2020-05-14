@@ -1,0 +1,1978 @@
+--------------------------------------------------------------------------------
+I1 cache:         32768 B, 64 B, 8-way associative
+D1 cache:         24576 B, 64 B, 6-way associative
+LL cache:         1048576 B, 64 B, 16-way associative
+Command:          ./a.out
+Data file:        cachegrind.out.3292
+Events recorded:  Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Events shown:     Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Event sort order: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Thresholds:       0.1 100 100 100 100 100 100 100 100
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir        I1mr  ILmr  Dr        D1mr   DLmr  Dw      D1mw  DLmw  
+--------------------------------------------------------------------------------
+5,045,215 2,164 1,960 1,488,217 15,840 8,346 789,965 2,643 1,621  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir      I1mr ILmr Dr      D1mr  DLmr  Dw     D1mw  DLmw  file:function
+--------------------------------------------------------------------------------
+954,630   11   11 158,297 2,044 1,648 46,201    18    1  ???:_dl_lookup_symbol_x
+577,201   37   36 189,215 4,587   809 87,407    69   40  ???:do_lookup_x
+443,808    4    4 154,368    28     0 96,480     0    0  ???:__dynamic_cast
+371,749   49   49  91,863 5,780 4,168 28,329 1,720  908  ???:_dl_relocate_object
+231,840    4    3  70,840     0     0 57,960     0    0  ???:__cxxabiv1::__si_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
+182,856   10    6  64,160     4     1 48,120     0    0  ???:__cxxabiv1::__vmi_class_type_info::__do_dyncast(long, __cxxabiv1::__class_type_info::__sub_kind, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__dyncast_result&) const
+118,266    5    5  39,414   433   209 13,170     9    1  ???:check_match
+111,287  245  211  71,896   209    10  3,838    25   14  ???:???
+ 84,963    8    8  19,221     4     0 16,038     0    0  ???:std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+ 72,373  104   65  18,818   249    92      0     0    0  ???:strcmp
+ 71,203    6    6  22,783     5     1  9,115     0    0  ???:fwrite
+ 67,368    2    2  16,040     1     0      0     0    0  ???:__strcmp_sse2_unaligned
+ 66,741   10   10  14,299 1,097   915     15     1    0  ???:_dl_addr
+ 55,349    8    8  11,237     3     1  7,796     0    0  ???:_IO_file_xsputn@@GLIBC_2.2.5
+ 53,547    1    1  21,342    18     4     96     0    0  ???:std::locale::id::_M_id() const
+ 51,213   11   11  12,004     8     0 12,403     0    0  ???:std::basic_ios<char, std::char_traits<char> >::copyfmt(std::basic_ios<char, std::char_traits<char> > const&)
+ 48,120    5    3   4,812     0     0 17,644     0    0  ???:std::basic_ios<char, std::char_traits<char> >::_M_cache_locale(std::locale const&)
+ 43,408   11   10  12,058     3     0  9,430     0    0  /home/live/HerrComp/project/project.cpp:dfs_aux(Eigen::Matrix<int, -1, -1, 0, -1, -1>&, std::vector<bool, std::allocator<bool> >&, int, int, int, percolate_tf&, cluster_attributes&)
+ 40,440    3    2  14,154     1     0 14,154     0    0  ???:std::locale::locale()
+ 40,317   18   18  11,517    30     0  6,995     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/IO.h:std::ostream& Eigen::internal::print_matrix<Eigen::Matrix<int, -1, -1, 0, -1, -1> >(std::ostream&, Eigen::Matrix<int, -1, -1, 0, -1, -1> const&, Eigen::IOFormat const&)
+ 39,376    4    4  13,696     1     0  7,704     0    0  ???:std::ostream& std::ostream::_M_insert<long>(long)
+ 33,684    4    2  14,436     7     0  4,812     0    0  ???:bool std::has_facet<std::ctype<char> >(std::locale const&)
+ 33,684    2    2  14,436     6     0  4,812     0    0  ???:bool std::has_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >(std::locale const&)
+ 33,684    2    1  14,436     1     0  4,812     0    0  ???:bool std::has_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >(std::locale const&)
+ 31,332    3    3  10,444     0     0  7,460     0    0  ???:std::ostream::sentry::sentry(std::ostream&)
+ 30,552    4    2  11,256     0     0  4,824     0    0  ???:std::locale::operator=(std::locale const&)
+ 30,476    4    2  14,436     0     0  4,812     0    0  ???:std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > const& std::use_facet<std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > > >(std::locale const&)
+ 30,476    3    2  14,436     0     0  4,812     0    0  ???:std::ctype<char> const& std::use_facet<std::ctype<char> >(std::locale const&)
+ 30,476    2    1  14,436     0     0  4,812     0    0  ???:std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > const& std::use_facet<std::num_get<char, std::istreambuf_iterator<char, std::char_traits<char> > > >(std::locale const&)
+ 29,739    2    2   7,758     0     0  6,465     0    0  /usr/include/c++/9.2.0/bits/stl_bvector.h:std::vector<bool, std::allocator<bool> >::operator[](unsigned long)
+ 28,664    5    5   5,626    43    43     73     2    2  ???:__GI___tunables_init
+ 28,400    6    6   4,000     3     0 14,800     0    0  ???:std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream()
+ 26,488    3    2   3,612     0     0 10,836     0    0  ???:std::basic_ios<char, std::char_traits<char> >::init(std::basic_streambuf<char, std::char_traits<char> >*)
+ 25,290    2    2   8,430     0     0  8,430     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/PlainObjectBase.h:Eigen::PlainObjectBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> >::cols() const
+ 24,567    0    0  10,344     0     0  3,879     0    0  /usr/include/c++/9.2.0/bits/stl_bvector.h:std::_Bit_iterator::operator*() const
+ 23,694    5    5   4,306     0     0  3,600     0    0  ???:std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace(unsigned long, unsigned long, char const*, unsigned long)
+ 23,664    6    3     408     1     0 10,608    32   16  ???:std::ios_base::ios_base()
+ 23,400    4    4   8,320     2     0  5,720     0    0  ???:std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+ 22,952    2    2   3,624     0     0  9,664     0    0  ???:std::ios_base::_M_init()
+ 22,000    4    4   7,200     0     0  6,000     0    0  /usr/include/c++/9.2.0/bits/random.tcc:float std::generate_canonical<float, 24ul, std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&)
+ 22,000    4    4   7,200     0     0  4,400     0    0  ???:std::__cxx11::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::overflow(int)
+ 21,189    1    1  12,108     0     0  6,054     1    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/DenseStorage.h:Eigen::DenseStorage<int, -1, -1, -1, 0>::rows() const
+ 20,936    6    6   9,359     0     0  1,255     0    0  /usr/include/c++/9.2.0/bits/random.tcc:std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::_M_gen_rand()
+ 20,043    1    1   6,681     0     0  6,681     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/PlainObjectBase.h:Eigen::PlainObjectBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> >::rows() const
+ 19,670    1    1  11,240     0     0  5,620     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/DenseStorage.h:Eigen::DenseStorage<int, -1, -1, -1, 0>::cols() const
+ 19,410    1    1   6,470     0     0  6,470     0    0  /usr/include/c++/9.2.0/bits/stl_bvector.h:std::_Bit_iterator::_Bit_iterator(unsigned long*, unsigned int)
+ 19,200    2    2   5,600     0     0  5,600     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/PlainObjectBase.h:Eigen::PlainObjectBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> >::coeff(long, long) const
+ 18,186    2    1   7,794     0     0  7,794     0    0  /usr/include/c++/9.2.0/bits/stl_bvector.h:std::_Bit_iterator_base::_Bit_iterator_base(unsigned long*, unsigned int)
+ 18,102    1    1   7,758     0     0  7,758     0    0  /usr/include/c++/9.2.0/bits/stl_bvector.h:std::_Bit_reference::_Bit_reference(unsigned long*, unsigned long)
+ 17,192    7    7   3,593     0     0  2,526     1    1  /home/live/HerrComp/project/project.cpp:randomly_fill_matrix(Eigen::Matrix<int, -1, -1, 0, -1, -1>&, float, int, std::vector<bool, std::allocator<bool> >&)
+ 16,856    2    2   9,632     0     0  2,408     0    0  ???:std::locale::~locale()
+ 16,116    3    3   5,082     1     0  2,494     0    0  ???:std::basic_streambuf<char, std::char_traits<char> >::xsputn(char const*, long)
+ 15,593    4    4   8,105     0     0  3,122    54    6  /usr/include/c++/9.2.0/bits/random.tcc:std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long)
+ 15,299    8    7   3,514     1     0  2,044     6    6  ???:__memcpy_sse2_unaligned_erms
+ 14,081    6    6   2,902     0     0  2,738     0    0  /home/live/HerrComp/project/project.cpp:dfs(Eigen::Matrix<int, -1, -1, 0, -1, -1>&, std::vector<bool, std::allocator<bool> >&, percolate_tf&, std::vector<cluster_attributes, std::allocator<cluster_attributes> >&)
+ 13,603    1    1   7,201     0     0  1,601     0    0  /usr/include/c++/9.2.0/bits/random.tcc:std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::operator()()
+ 13,600    1    1   3,600     0     0  4,800     0    0  /usr/include/c++/9.2.0/bits/random.h:float std::uniform_real_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::uniform_real_distribution<float>::param_type const&)
+ 13,158    0    0   6,579     0     0  4,386     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/EigenBase.h:Eigen::EigenBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> >::derived() const
+ 12,800    3    3   2,400     1     0  4,400     0    0  ???:std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()
+ 12,096    7    7   3,520     1     0    256     0    0  ???:std::locale::_Impl::_M_install_facet(std::locale::id const*, std::locale::facet const*)
+ 12,056    0    0   3,288     0     0  4,384     1    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/EigenBase.h:Eigen::EigenBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> >::rows() const
+ 12,000    1    1   6,000     0     0  3,600     0    0  ???:std::ios_base::_M_call_callbacks(std::ios_base::event)
+ 11,837    1    1   3,115     0     0  2,492     0    0  /usr/include/c++/9.2.0/bits/random.h:std::__detail::_Mod<unsigned long, 624ul, 1ul, 0ul, true, true>::__calc(unsigned long)
+ 11,609    0    0   6,251     0     0  1,786     0    0  /usr/include/c++/9.2.0/bits/stl_bvector.h:std::_Bit_reference::operator bool() const
+ 10,695    1    1   2,070     0     0  3,105     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:Eigen::DenseCoeffsBase<Eigen::Matrix<int, -1, -1, 0, -1, -1>, 1>::coeffRef(long, long)
+  9,968    6    5   3,654   420    65    763     1    0  ???:_dl_fixup
+  9,694    3    3   2,800     0     0  2,800     0    0  ???:std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const
+  9,660    1    1   3,795     0     0  2,415     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:Eigen::DenseCoeffsBase<Eigen::Matrix<int, -1, -1, 0, -1, -1>, 1>::operator()(long, long)
+  9,600    2    2   4,000     0     0  3,200     0    0  ???:std::ios_base::_M_dispose_callbacks()
+  9,342    2    2   2,768     0     0  3,114     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/CoreEvaluators.h:Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> > >::evaluator(Eigen::PlainObjectBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> > const&)
+  8,952    1    1   7,460     0     0      0     0    0  ???:std::ostream::sentry::~sentry()
+  8,560    2    2   2,568     2     0      0     0    0  ???:std::ostream::operator<<(int)
+  8,266   20   20   2,786    88    75    786    59   54  ???:_dl_check_map_versions
+  8,250    0    0   2,250     0     0  3,000     1    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/EigenBase.h:Eigen::EigenBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> >::cols() const
+  8,064    4    4   2,432     5     0  1,280     0    0  ???:btowc
+  8,022    1    1   4,584     0     0  2,292     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/DenseStorage.h:Eigen::DenseStorage<int, -1, -1, -1, 0>::data() const
+  8,000    2    2   4,400     0     0  1,600     0    0  /usr/include/c++/9.2.0/bits/stl_bvector.h:std::_Bit_reference::operator=(bool)
+  7,935    1    1   2,760     0     0  2,070     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/CoreEvaluators.h:Eigen::internal::evaluator<Eigen::PlainObjectBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> > >::coeffRef(long, long)
+  6,868    0    0   2,020     0     0  2,020     0    0  /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/EigenBase.h:Eigen::EigenBase<Eigen::Matrix<int, -1, -1, 0, -1, -1> >::size() const
+  6,400    1    1   1,200     1     0  1,600     0    0  ???:std::ios_base::~ios_base()
+  6,240    1    1   3,120     0     0  1,872     0    0  /usr/include/c++/9.2.0/bits/random.h:std::__detail::_Mod<unsigned long, 4294967296ul, 1ul, 0ul, true, true>::__calc(unsigned long)
+  5,616    1    1   1,872     0     0  1,872     1    1  /usr/include/c++/9.2.0/bits/random.h:unsigned long std::__detail::__mod<unsigned long, 4294967296ul, 1ul, 0ul>(unsigned long)
+  5,607    1    1   1,869     0     0  1,869     0    0  /usr/include/c++/9.2.0/bits/random.h:unsigned long std::__detail::__mod<unsigned long, 624ul, 1ul, 0ul>(unsigned long)
+  5,600    0    0   3,200     0     0  1,600     0    0  /usr/include/c++/9.2.0/bits/random.h:std::uniform_real_distribution<float>::param_type::a() const
+  5,405   48   48   1,181    46    46    559    51   51  ???:_dl_map_object_from_fd
+  5,202    2    2   1,530     0     0  1,224     0    0  ???:std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_pad(char, long, std::ios_base&, char*, char const*, int&) const
+  5,202    1    0   2,800     0     0  1,200     0    0  /usr/include/c++/9.2.0/bits/stl_algobase.h:long const& std::max<long>(long const&, long const&)
+  5,200    1    1   2,800     0     0  2,000     0    0  /usr/include/c++/9.2.0/bits/ios_base.h:std::ios_base::width(long)
+  5,200    0    0   2,000     0     0  1,600     0    0  /usr/include/c++/9.2.0/bits/random.h:float std::uniform_real_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&)
+  5,165    1    1   1,033     1     0      0     0    0  ???:__gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::xsputn(char const*, long)
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h
+--------------------------------------------------------------------------------
+Ir    I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 332 ----------------------------------------
+    .    .    .     .    .    .     .    .    .        * parameters \a row and \a col are in range.
+    .    .    .     .    .    .     .    .    .        *
+    .    .    .     .    .    .     .    .    .        * If EIGEN_INTERNAL_DEBUGGING is defined, an assertion will be made, making this
+    .    .    .     .    .    .     .    .    .        * function equivalent to \link operator()(Index,Index) \endlink.
+    .    .    .     .    .    .     .    .    .        *
+    .    .    .     .    .    .     .    .    .        * \sa operator()(Index,Index), coeff(Index, Index) const, coeffRef(Index)
+    .    .    .     .    .    .     .    .    .        */
+    .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+2,415    0    0     0    0    0 1,725    0    0      EIGEN_STRONG_INLINE Scalar& coeffRef(Index row, Index col)
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        eigen_internal_assert(row >= 0 && row < rows()
+    .    .    .     .    .    .     .    .    .                           && col >= 0 && col < cols());
+6,900    1    1 1,035    0    0 1,380    0    0        return internal::evaluator<Derived>(derived()).coeffRef(row,col);
+1,380    0    0 1,035    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+    .    .    .     .    .    .     .    .    .      EIGEN_STRONG_INLINE Scalar&
+    .    .    .     .    .    .     .    .    .      coeffRefByOuterInner(Index outer, Index inner)
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        return coeffRef(rowIndexByOuterInner(outer, inner),
+    .    .    .     .    .    .     .    .    .                        colIndexByOuterInner(outer, inner));
+    .    .    .     .    .    .     .    .    .      }
+-- line 353 ----------------------------------------
+-- line 354 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      /** \returns a reference to the coefficient at given the given row and column.
+    .    .    .     .    .    .     .    .    .        *
+    .    .    .     .    .    .     .    .    .        * \sa operator[](Index)
+    .    .    .     .    .    .     .    .    .        */
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+    .    .    .     .    .    .     .    .    .      EIGEN_STRONG_INLINE Scalar&
+2,070    1    1     0    0    0 1,380    0    0      operator()(Index row, Index col)
+    .    .    .     .    .    .     .    .    .      {
+4,830    0    0 2,070    0    0   690    0    0        eigen_assert(row >= 0 && row < rows()
+    .    .    .     .    .    .     .    .    .            && col >= 0 && col < cols());
+2,070    0    0 1,035    0    0   345    0    0        return coeffRef(row, col);
+  690    0    0   690    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      /** Short version: don't use this function, use
+    .    .    .     .    .    .     .    .    .        * \link operator[](Index) \endlink instead.
+    .    .    .     .    .    .     .    .    .        *
+    .    .    .     .    .    .     .    .    .        * Long version: this function is similar to
+    .    .    .     .    .    .     .    .    .        * \link operator[](Index) \endlink, but without the assertion.
+    .    .    .     .    .    .     .    .    .        * Use this for limiting the performance cost of debugging code when doing
+-- line 375 ----------------------------------------
+-- line 573 ----------------------------------------
+    .    .    .     .    .    .     .    .    .      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      /** \returns the pointer increment between two consecutive inner slices (for example, between two consecutive columns
+    .    .    .     .    .    .     .    .    .        *          in a column-major matrix).
+    .    .    .     .    .    .     .    .    .        *
+    .    .    .     .    .    .     .    .    .        * \sa innerStride(), rowStride(), colStride()
+    .    .    .     .    .    .     .    .    .        */
+    .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+1,384    0    0     0    0    0   692    0    0      inline Index outerStride() const
+    .    .    .     .    .    .     .    .    .      {
+1,730    0    0   346    0    0   692    0    0        return derived().outerStride();
+  692    0    0   692    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      // FIXME shall we remove it ?
+    .    .    .     .    .    .     .    .    .      inline Index stride() const
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        return Derived::IsVectorAtCompileTime ? innerStride() : outerStride();
+    .    .    .     .    .    .     .    .    .      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      /** \returns the pointer increment between two consecutive rows.
+-- line 592 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/live/HerrComp/project/project.cpp
+--------------------------------------------------------------------------------
+Ir     I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 14 ----------------------------------------
+     .    .    .     .    .    .     .    .    .    bool aux_left;
+     .    .    .     .    .    .     .    .    .    bool aux_perc;
+     .    .    .     .    .    .     .    .    .  };
+     .    .    .     .    .    .     .    .    .  void randomly_fill_matrix (Eigen::MatrixXi & M, const float prob, const int seed, std::vector<bool> & visit);
+     .    .    .     .    .    .     .    .    .  void dfs (Eigen::MatrixXi & M, std::vector<bool> & visit, percolate_tf & perc, std::vector<cluster_attributes> & cl_att_vect);
+     .    .    .     .    .    .     .    .    .  void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int array_coef, percolate_tf & perc, cluster_attributes & cl_att);
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  int main(void)
+     4    0    0     0    0    0     2    0    0  {
+     1    0    0     0    0    0     1    0    0    int seed=1;
+     1    0    0     0    0    0     1    0    0    int N=20;
+     2    0    0     1    1    1     1    0    0    float prob=0.3;
+    11    0    0     0    0    0     2    0    0    Eigen::MatrixXi X (N,N);
+    19    3    3     0    0    0     6    0    0    std::vector<bool> visited (X.size(), false); //generacion de un vector tamaño nxn tipo bool que se usa como check para el dfs
+     6    0    0     0    0    0     2    0    0    std::vector<cluster_attributes> cl_att_vect;
+     .    .    .     .    .    .     .    .    .    percolate_tf perc; //declaracion de un struct auxiliar que indica si hubo percolacion
+     7    0    0     2    0    0     1    0    0    randomly_fill_matrix (X, prob, seed, visited);
+     6    1    1     0    0    0     1    0    0    dfs (X, visited, perc, cl_att_vect);
+    10    0    0     0    0    0     3    0    0    std::cout<< X <<"\n"<< std::endl;
+     9    1    1     0    0    0     3    0    0    std::cout<<"id \t"<< "size \t"<<std::endl;
+     .    .    .     .    .    .     .    .    .    
+     .    .    .     .    .    .     .    .    .    /* for (int i=0; i<cl_att_vect.size(); i++){
+     .    .    .     .    .    .     .    .    .       std::cout<<cl_att_vect.at(i)<<std::endl;
+     .    .    .     .    .    .     .    .    .       }*/
+   913    2    2    58    7    0   230    1    0    for (const auto cluster : cl_att_vect)
+     .    .    .     .    .    .     .    .    .      {
+   840    1    1   112    0    0   224    0    0        std::cout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<std::endl;
+     .    .    .     .    .    .     .    .    .      }
+    12    1    1     1    0    0     3    0    0    std::cout<<"percola:"<<perc.aux_perc<<std::endl;
+    16    1    1     0    0    0     8    0    0    std::vector<bool>().swap(visited); //forma sugerida por google para liberar la memoria de un vector
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    
+     1    0    0     0    0    0     0    0    0    return 0;
+     4    1    0     3    1    0     0    0    0  }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  void randomly_fill_matrix (Eigen::MatrixXi & M, const float prob, const int seed, std::vector<bool> & visit)
+     8    2    2     0    0    0     6    1    1  {
+     6    0    0     1    0    0     1    0    0    std::mt19937 gen(seed);
+     5    1    1     1    0    0     1    0    0    std::uniform_real_distribution<float> dis(0, 1.0); //genera numeros distribuidos uniformemente
+     3    0    0     1    0    0     1    0    0    M.setZero();
+   230    1    1    62    0    0    22    0    0    for (int n = 0; n < M.cols(); n++){
+ 4,600    0    0 1,240    0    0   440    0    0      for (int m = 0; m < M.cols(); m++){
+ 5,200    1    1   800    0    0   400    0    0        if (dis(gen) >= (1.0-prob))
+     .    .    .     .    .    .     .    .    .  	{
+ 1,150    0    0   345    0    0   230    0    0  	  M(n, m) = 1; //asigna 1 al elemento de matriz si el numero aleatorio se encuentra dentro del rango de probabilidad
+     .    .    .     .    .    .     .    .    .  	}
+     .    .    .     .    .    .     .    .    .        else{
+ 5,985    2    2 1,140    0    0 1,425    0    0  	   visit[(n*M.cols())+m]=true; //asume los elementos 0 de la matriz como visitados
+     .    .    .     .    .    .     .    .    .        }
+     .    .    .     .    .    .     .    .    .      }
+     .    .    .     .    .    .     .    .    .    }
+     5    0    0     3    0    0     0    0    0  }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  void dfs (Eigen::MatrixXi & M, std::vector<bool> & visit, percolate_tf & perc, std::vector<cluster_attributes> & cl_att_vect)
+     8    1    1     0    0    0     6    0    0  {
+     .    .    .     .    .    .     .    .    .    cluster_attributes cl_att;
+     2    0    0     1    0    0     1    0    0    perc.aux_perc = false; //inicializacion de las variables
+     1    0    0     0    0    0     1    0    0    cl_att.cluster_id = 1;//declaracion del id para los cluster
+ 4,410    2    2 1,202    0    0   402    0    0    for (int i=0; i<M.size(); i++)
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .        
+ 6,400    1    1   800    0    0 1,600    0    0        if ( visit[i] == false)
+     .    .    .     .    .    .     .    .    .  	{
+   112    0    0    56    0    0    56    0    0  	  perc.aux_top = false; 
+   112    0    0    56    0    0    56    0    0  	  perc.aux_bottom = false;
+   112    0    0    56    0    0    56    0    0  	  perc.aux_left = false;
+   112    0    0    56    0    0    56    0    0  	  perc.aux_right = false;
+    56    0    0     0    0    0    56    0    0  	  cl_att.cluster_size = 0;
+     .    .    .     .    .    .     .    .    .  	  // inizaliacion del contador de tamaño
+   168    0    0    56    0    0    56    0    0  	  cl_att.cluster_id+=1; //cambio del id del cluster
+   560    1    1   112    0    0   112    0    0  	  int col_coef = i/M.cols(); //conversion de la posicion actual i a (n , m)
+   672    0    0   112    0    0   112    0    0  	  int row_coef = i%M.rows();
+     .    .    .     .    .    .     .    .    .  	  
+   672    0    0   336    0    0   112    0    0  	  dfs_aux(M, visit, col_coef, row_coef,  i, perc, cl_att);//llamado al explorador de clusters
+     .    .    .     .    .    .     .    .    .  
+   336    0    0    56    0    0    56    0    0  	  cl_att_vect.push_back (cl_att);
+     .    .    .     .    .    .     .    .    .  	  
+     .    .    .     .    .    .     .    .    .  	}
+   344    1    1     0    0    0     0    0    0        else continue;
+     .    .    .     .    .    .     .    .    .      }
+     4    0    0     3    0    0     0    0    0  }
+     .    .    .     .    .    .     .    .    .  	  
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int array_coef, percolate_tf & perc, cluster_attributes & cl_att)
+ 5,160    0    0     0    0    0 4,128    0    0  {
+     .    .    .     .    .    .     .    .    .    /*int aux_mtoa_coef = (n*M.cols())+m;*/ //array_coef esta haciendo el trabajo //conversion de los coeficientes tipo matriz a tipo array
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    
+     .    .    .     .    .    .     .    .    .    //todavia no implementado, revisa si el cluster es percolante
+10,654    1    1 3,031    0    0 1,007    0    0    if(n < 0 || n >= M.cols() || m < 0 || m >= M.rows()) //condicion para las fronteras de la matriz
+     .    .    .     .    .    .     .    .    .      {
+    46    0    0     0    0    0     0    0    0        return;
+     .    .    .     .    .    .     .    .    .      }
+     .    .    .     .    .    .     .    .    .  
+ 7,888    1    1   986    0    0 1,972    0    0    if(visit[array_coef] == true) //evita las casillas visitadas
+     .    .    .     .    .    .     .    .    .      {
+   756    1    0     0    0    0     0    0    0        return;
+     .    .    .     .    .    .     .    .    .      }
+ 1,725    1    1   690    3    0   115    0    0    if( M(n,m) == cl_att.cluster_id )
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .        return;
+     .    .    .     .    .    .     .    .    .      }
+   230    0    0   115    0    0     0    0    0    if (n==0){
+    12    0    0     6    0    0     6    0    0      perc.aux_left=true;
+     .    .    .     .    .    .     .    .    .    }
+ 1,150    1    1   230    0    0   115    0    0    if (n==(M.cols()-1)){
+    18    0    0     9    0    0     9    0    0      perc.aux_right=true;
+     .    .    .     .    .    .     .    .    .      }
+   230    0    0   115    0    0     0    0    0    if (m==0){
+     8    0    0     4    0    0     4    0    0      perc.aux_top=true;
+     .    .    .     .    .    .     .    .    .    }
+ 1,150    1    1   230    0    0   115    0    0    if (m==(M.rows()-1)){
+     8    0    0     4    0    0     4    0    0      perc.aux_bottom=true;
+     .    .    .     .    .    .     .    .    .    }
+     .    .    .     .    .    .     .    .    .    
+ 1,440    1    1   490    0    0     0    0    0    if ((perc.aux_left && perc.aux_right) || (perc.aux_top && perc.aux_bottom) == true)
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .        perc.aux_perc = true; //indica si se encontró un cluster percolante
+     .    .    .     .    .    .     .    .    .      }
+     .    .    .     .    .    .     .    .    .    
+ 1,380    1    1   230    0    0   460    0    0    visit[array_coef] = true; //escribe la casilla como visitada
+     .    .    .     .    .    .     .    .    .    
+ 1,265    0    0   575    0    0   230    0    0    M(n,m) = cl_att.cluster_id; //escribe la entrada actual en la matriz con el id
+     .    .    .     .    .    .     .    .    .    
+   575    0    0   345    0    0   115    0    0    cl_att.cluster_size += 1; //añade 1 al tamaño cada vez que se cumple la orden
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  
+ 1,610    1    1   805    0    0   230    0    0    dfs_aux (M, visit, n, m+1, array_coef+1, perc, cl_att);
+ 1,610    1    1   805    0    0   230    0    0    dfs_aux (M, visit, n, m-1, array_coef-1, perc, cl_att);
+ 2,415    1    1   920    0    0   345    0    0    dfs_aux (M, visit, n+1, m, array_coef+M.cols(), perc, cl_att);
+ 2,530    0    0   920    0    0   345    0    0    dfs_aux (M, visit, n-1, m, array_coef-M.cols(), perc, cl_att);
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    //^^ busca en las casillas adyacentes
+ 1,567    4    3 1,554    1    0     5    0    0  }
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/EigenBase.h
+--------------------------------------------------------------------------------
+Ir     I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 37 ----------------------------------------
+     .    .    .     .    .    .     .    .    .      */
+     .    .    .     .    .    .     .    .    .    typedef Eigen::Index Index;
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    // FIXME is it needed?
+     .    .    .     .    .    .     .    .    .    typedef typename internal::traits<Derived>::StorageKind StorageKind;
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    /** \returns a reference to the derived object */
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+ 2,088    0    0 1,044    0    0   696    0    0    Derived& derived() { return *static_cast<Derived*>(this); }
+     .    .    .     .    .    .     .    .    .    /** \returns a const reference to the derived object */
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+13,164    0    0 6,582    0    0 4,388    0    0    const Derived& derived() const { return *static_cast<const Derived*>(this); }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+     3    0    0     0    0    0     2    0    0    inline Derived& const_cast_derived() const
+     3    1    1     3    0    0     0    0    0    { return *static_cast<Derived*>(const_cast<EigenBase*>(this)); }
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+     .    .    .     .    .    .     .    .    .    inline const Derived& const_derived() const
+     .    .    .     .    .    .     .    .    .    { return *static_cast<const Derived*>(this); }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    /** \returns the number of rows. \sa cols(), RowsAtCompileTime */
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+12,056    0    0 3,288    0    0 4,384    1    0    inline Index rows() const { return derived().rows(); }
+     .    .    .     .    .    .     .    .    .    /** \returns the number of columns. \sa rows(), ColsAtCompileTime*/
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+ 8,250    0    0 2,250    0    0 3,000    1    0    inline Index cols() const { return derived().cols(); }
+     .    .    .     .    .    .     .    .    .    /** \returns the number of coefficients, which is rows()*cols().
+     .    .    .     .    .    .     .    .    .      * \sa rows(), cols(), SizeAtCompileTime. */
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+ 6,868    0    0 2,020    0    0 2,020    0    0    inline Index size() const { return rows() * cols(); }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    /** \internal Don't use it, but do the equivalent: \code dst = *this; \endcode */
+     .    .    .     .    .    .     .    .    .    template<typename Dest>
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+     .    .    .     .    .    .     .    .    .    inline void evalTo(Dest& dst) const
+     .    .    .     .    .    .     .    .    .    { derived().evalTo(dst); }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .    /** \internal Don't use it, but do the equivalent: \code dst += *this; \endcode */
+-- line 74 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/9.2.0/bits/ios_base.h
+--------------------------------------------------------------------------------
+Ir    I1mr ILmr Dr  D1mr DLmr Dw    D1mw DLmw 
+
+-- line 720 ----------------------------------------
+    .    .    .   .    .    .     .    .    .      { return _M_width; }
+    .    .    .   .    .    .     .    .    .  
+    .    .    .   .    .    .     .    .    .      /**
+    .    .    .   .    .    .     .    .    .       *  @brief  Changing flags.
+    .    .    .   .    .    .     .    .    .       *  @param  __wide  The new width value.
+    .    .    .   .    .    .     .    .    .       *  @return  The previous value of width().
+    .    .    .   .    .    .     .    .    .      */
+    .    .    .   .    .    .     .    .    .      streamsize
+1,600    1    1   0    0    0 1,200    0    0      width(streamsize __wide)
+    .    .    .   .    .    .     .    .    .      {
+1,200    0    0 800    0    0   400    0    0        streamsize __old = _M_width;
+1,200    0    0 800    0    0   400    0    0        _M_width = __wide;
+  400    0    0 400    0    0     0    0    0        return __old;
+  800    0    0 800    0    0     0    0    0      }
+    .    .    .   .    .    .     .    .    .  
+    .    .    .   .    .    .     .    .    .      // [27.4.2.4] ios_base static members
+    .    .    .   .    .    .     .    .    .      /**
+    .    .    .   .    .    .     .    .    .       *  @brief  Interaction with the standard C I/O objects.
+    .    .    .   .    .    .     .    .    .       *  @param  __sync  Whether to synchronize or not.
+    .    .    .   .    .    .     .    .    .       *  @return  True if the standard streams were previously synchronized.
+    .    .    .   .    .    .     .    .    .       *
+    .    .    .   .    .    .     .    .    .       *  The synchronization referred to is @e only that between the standard
+-- line 741 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/DenseStorage.h
+--------------------------------------------------------------------------------
+Ir     I1mr ILmr Dr     D1mr DLmr Dw    D1mw DLmw 
+
+-- line 336 ----------------------------------------
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  // purely dynamic matrix.
+     .    .    .      .    .    .     .    .    .  template<typename T, int _Options> class DenseStorage<T, Dynamic, Dynamic, Dynamic, _Options>
+     .    .    .      .    .    .     .    .    .  {
+     .    .    .      .    .    .     .    .    .      T *m_data;
+     .    .    .      .    .    .     .    .    .      Index m_rows;
+     .    .    .      .    .    .     .    .    .      Index m_cols;
+     .    .    .      .    .    .     .    .    .    public:
+    12    1    1      5    0    0     5    0    0      EIGEN_DEVICE_FUNC DenseStorage() : m_data(0), m_rows(0), m_cols(0) {}
+     .    .    .      .    .    .     .    .    .      EIGEN_DEVICE_FUNC explicit DenseStorage(internal::constructor_without_unaligned_array_assert)
+     .    .    .      .    .    .     .    .    .         : m_data(0), m_rows(0), m_cols(0) {}
+     .    .    .      .    .    .     .    .    .      EIGEN_DEVICE_FUNC DenseStorage(Index size, Index rows, Index cols)
+     .    .    .      .    .    .     .    .    .        : m_data(internal::conditional_aligned_new_auto<T,(_Options&DontAlign)==0>(size)), m_rows(rows), m_cols(cols)
+     .    .    .      .    .    .     .    .    .      {
+     .    .    .      .    .    .     .    .    .        EIGEN_INTERNAL_DENSE_STORAGE_CTOR_PLUGIN({})
+     .    .    .      .    .    .     .    .    .        eigen_internal_assert(size==rows*cols && rows>=0 && cols >=0);
+     .    .    .      .    .    .     .    .    .      }
+-- line 352 ----------------------------------------
+-- line 383 ----------------------------------------
+     .    .    .      .    .    .     .    .    .      {
+     .    .    .      .    .    .     .    .    .        using std::swap;
+     .    .    .      .    .    .     .    .    .        swap(m_data, other.m_data);
+     .    .    .      .    .    .     .    .    .        swap(m_rows, other.m_rows);
+     .    .    .      .    .    .     .    .    .        swap(m_cols, other.m_cols);
+     .    .    .      .    .    .     .    .    .        return *this;
+     .    .    .      .    .    .     .    .    .      }
+     .    .    .      .    .    .     .    .    .  #endif
+    18    1    0      8    0    0     3    0    0      EIGEN_DEVICE_FUNC ~DenseStorage() { internal::conditional_aligned_delete_auto<T,(_Options&DontAlign)==0>(m_data, m_rows*m_cols); }
+     .    .    .      .    .    .     .    .    .      EIGEN_DEVICE_FUNC void swap(DenseStorage& other)
+     .    .    .      .    .    .     .    .    .      { std::swap(m_data,other.m_data); std::swap(m_rows,other.m_rows); std::swap(m_cols,other.m_cols); }
+21,189    1    1 12,108    0    0 6,054    1    0      EIGEN_DEVICE_FUNC Index rows(void) const {return m_rows;}
+19,670    1    1 11,240    0    0 5,620    0    0      EIGEN_DEVICE_FUNC Index cols(void) const {return m_cols;}
+     .    .    .      .    .    .     .    .    .      void conservativeResize(Index size, Index rows, Index cols)
+     .    .    .      .    .    .     .    .    .      {
+     .    .    .      .    .    .     .    .    .        m_data = internal::conditional_aligned_realloc_new_auto<T,(_Options&DontAlign)==0>(m_data, size, m_rows*m_cols);
+     .    .    .      .    .    .     .    .    .        m_rows = rows;
+     .    .    .      .    .    .     .    .    .        m_cols = cols;
+     .    .    .      .    .    .     .    .    .      }
+     7    0    0      0    0    0     5    0    0      EIGEN_DEVICE_FUNC void resize(Index size, Index rows, Index cols)
+     .    .    .      .    .    .     .    .    .      {
+     7    1    1      5    0    0     0    0    0        if(size != m_rows*m_cols)
+     .    .    .      .    .    .     .    .    .        {
+    11    0    0      6    0    0     1    0    0          internal::conditional_aligned_delete_auto<T,(_Options&DontAlign)==0>(m_data, m_rows*m_cols);
+     2    1    1      1    0    0     0    0    0          if (size)
+     6    0    0      2    0    0     2    0    0            m_data = internal::conditional_aligned_new_auto<T,(_Options&DontAlign)==0>(size);
+     .    .    .      .    .    .     .    .    .          else
+     .    .    .      .    .    .     .    .    .            m_data = 0;
+     .    .    .      .    .    .     .    .    .          EIGEN_INTERNAL_DENSE_STORAGE_CTOR_PLUGIN({})
+     .    .    .      .    .    .     .    .    .        }
+     3    0    0      2    0    0     1    0    0        m_rows = rows;
+     3    0    0      2    0    0     1    0    0        m_cols = cols;
+     3    0    0      2    0    0     0    0    0      }
+ 8,022    1    1  4,584    0    0 2,292    0    0      EIGEN_DEVICE_FUNC const T *data() const { return m_data; }
+     .    .    .      .    .    .     .    .    .      EIGEN_DEVICE_FUNC T *data() { return m_data; }
+     .    .    .      .    .    .     .    .    .  };
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  // matrix with dynamic width and fixed height (so that matrix has dynamic size).
+     .    .    .      .    .    .     .    .    .  template<typename T, int _Rows, int _Options> class DenseStorage<T, Dynamic, _Rows, Dynamic, _Options>
+     .    .    .      .    .    .     .    .    .  {
+     .    .    .      .    .    .     .    .    .      T *m_data;
+     .    .    .      .    .    .     .    .    .      Index m_cols;
+-- line 424 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/9.2.0/bits/random.h
+--------------------------------------------------------------------------------
+Ir    I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 127 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      // Special cases:
+    .    .    .     .    .    .     .    .    .      // - for m == 2^n or m == 0, unsigned integer overflow is safe.
+    .    .    .     .    .    .     .    .    .      // - a * (m - 1) + c fits in _Tp, there is no overflow.
+    .    .    .     .    .    .     .    .    .      template<typename _Tp, _Tp __m, _Tp __a, _Tp __c, bool __s>
+    .    .    .     .    .    .     .    .    .        struct _Mod<_Tp, __m, __a, __c, true, __s>
+    .    .    .     .    .    .     .    .    .        {
+    .    .    .     .    .    .     .    .    .  	static _Tp
+3,741    1    1     0    0    0 2,494    0    0  	__calc(_Tp __x)
+    .    .    .     .    .    .     .    .    .  	{
+2,494    0    0 1,247    0    0 1,247    0    0  	  _Tp __res = __a * __x + __c;
+    .    .    .     .    .    .     .    .    .  	  if (__m)
+8,101    1    1 1,247    0    0   623    0    0  	    __res %= __m;
+1,247    0    0 1,247    0    0     0    0    0  	  return __res;
+2,494    0    0 2,494    0    0     0    0    0  	}
+    .    .    .     .    .    .     .    .    .        };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      template<typename _Tp, _Tp __m, _Tp __a = 1, _Tp __c = 0>
+    .    .    .     .    .    .     .    .    .        inline _Tp
+4,988    1    1     0    0    0 2,494    1    1        __mod(_Tp __x)
+6,235    1    1 3,741    0    0 1,247    0    0        { return _Mod<_Tp, __m, __a, __c>::__calc(__x); }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      /*
+    .    .    .     .    .    .     .    .    .       * An adaptor class for converting the output of any Generator into
+    .    .    .     .    .    .     .    .    .       * the input for a specific Distribution.
+    .    .    .     .    .    .     .    .    .       */
+    .    .    .     .    .    .     .    .    .      template<typename _Engine, typename _DInputType>
+    .    .    .     .    .    .     .    .    .        struct _Adaptor
+    .    .    .     .    .    .     .    .    .        {
+    .    .    .     .    .    .     .    .    .  	static_assert(std::is_floating_point<_DInputType>::value,
+    .    .    .     .    .    .     .    .    .  		      "template argument must be a floating point type");
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        public:
+1,600    0    0     0    0    0 1,200    0    0  	_Adaptor(_Engine& __g)
+2,400    0    0 1,600    0    0   400    0    0  	: _M_g(__g) { }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	_DInputType
+    .    .    .     .    .    .     .    .    .  	min() const
+    .    .    .     .    .    .     .    .    .  	{ return _DInputType(0); }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	_DInputType
+    .    .    .     .    .    .     .    .    .  	max() const
+    .    .    .     .    .    .     .    .    .  	{ return _DInputType(1); }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	/*
+    .    .    .     .    .    .     .    .    .  	 * Converts a value generated by the adapted random number generator
+    .    .    .     .    .    .     .    .    .  	 * into a value in the input domain for the dependent random number
+    .    .    .     .    .    .     .    .    .  	 * distribution.
+    .    .    .     .    .    .     .    .    .  	 */
+    .    .    .     .    .    .     .    .    .  	_DInputType
+1,600    0    0     0    0    0   800    0    0  	operator()()
+    .    .    .     .    .    .     .    .    .  	{
+    .    .    .     .    .    .     .    .    .  	  return std::generate_canonical<_DInputType,
+    .    .    .     .    .    .     .    .    .  	                            std::numeric_limits<_DInputType>::digits,
+1,600    0    0   800    0    0   400    0    0  	                            _Engine>(_M_g);
+  800    0    0   800    0    0     0    0    0  	}
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        private:
+    .    .    .     .    .    .     .    .    .  	_Engine& _M_g;
+    .    .    .     .    .    .     .    .    .        };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .      template<typename _Sseq>
+    .    .    .     .    .    .     .    .    .        using __seed_seq_generate_t = decltype(
+    .    .    .     .    .    .     .    .    .  	  std::declval<_Sseq&>().generate(std::declval<uint_least32_t*>(),
+-- line 190 ----------------------------------------
+-- line 511 ----------------------------------------
+    .    .    .     .    .    .     .    .    .        static constexpr result_type initialization_multiplier = __f;
+    .    .    .     .    .    .     .    .    .        static constexpr result_type default_seed = 5489u;
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        // constructors and member functions
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        mersenne_twister_engine() : mersenne_twister_engine(default_seed) { }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        explicit
+    5    2    2     0    0    0     3    0    0        mersenne_twister_engine(result_type __sd)
+    8    0    0     4    0    0     1    1    1        { seed(__sd); }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        /**
+    .    .    .     .    .    .     .    .    .         * @brief Constructs a %mersenne_twister_engine random number generator
+    .    .    .     .    .    .     .    .    .         *        engine seeded from the seed sequence @p __q.
+    .    .    .     .    .    .     .    .    .         *
+    .    .    .     .    .    .     .    .    .         * @param __q the seed sequence.
+    .    .    .     .    .    .     .    .    .         */
+    .    .    .     .    .    .     .    .    .        template<typename _Sseq, typename = _If_seed_seq<_Sseq>>
+-- line 528 ----------------------------------------
+-- line 536 ----------------------------------------
+    .    .    .     .    .    .     .    .    .        template<typename _Sseq>
+    .    .    .     .    .    .     .    .    .          _If_seed_seq<_Sseq>
+    .    .    .     .    .    .     .    .    .          seed(_Sseq& __q);
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        /**
+    .    .    .     .    .    .     .    .    .         * @brief Gets the smallest possible value in the output range.
+    .    .    .     .    .    .     .    .    .         */
+    .    .    .     .    .    .     .    .    .        static constexpr result_type
+  800    1    1     0    0    0   400    0    0        min()
+1,200    0    0   800    0    0     0    0    0        { return 0; }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        /**
+    .    .    .     .    .    .     .    .    .         * @brief Gets the largest possible value in the output range.
+    .    .    .     .    .    .     .    .    .         */
+    .    .    .     .    .    .     .    .    .        static constexpr result_type
+    .    .    .     .    .    .     .    .    .        max()
+    .    .    .     .    .    .     .    .    .        { return __detail::_Shift<_UIntType, __w>::__value - 1; }
+    .    .    .     .    .    .     .    .    .  
+-- line 553 ----------------------------------------
+-- line 1743 ----------------------------------------
+    .    .    .     .    .    .     .    .    .        /** Parameter type. */
+    .    .    .     .    .    .     .    .    .        struct param_type
+    .    .    .     .    .    .     .    .    .        {
+    .    .    .     .    .    .     .    .    .  	typedef uniform_real_distribution<_RealType> distribution_type;
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	param_type() : param_type(0) { }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	explicit
+    5    0    0     0    0    0     4    0    0  	param_type(_RealType __a, _RealType __b = _RealType(1))
+    6    0    0     4    0    0     2    0    0  	: _M_a(__a), _M_b(__b)
+    .    .    .     .    .    .     .    .    .  	{
+    .    .    .     .    .    .     .    .    .  	  __glibcxx_assert(_M_a <= _M_b);
+    3    0    0     2    0    0     0    0    0  	}
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	result_type
+2,400    0    0     0    0    0 1,600    0    0  	a() const
+3,200    0    0 3,200    0    0     0    0    0  	{ return _M_a; }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	result_type
+1,200    0    0     0    0    0   800    0    0  	b() const
+1,600    0    0 1,600    0    0     0    0    0  	{ return _M_b; }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	friend bool
+    .    .    .     .    .    .     .    .    .  	operator==(const param_type& __p1, const param_type& __p2)
+    .    .    .     .    .    .     .    .    .  	{ return __p1._M_a == __p2._M_a && __p1._M_b == __p2._M_b; }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  	friend bool
+    .    .    .     .    .    .     .    .    .  	operator!=(const param_type& __p1, const param_type& __p2)
+    .    .    .     .    .    .     .    .    .  	{ return !(__p1 == __p2); }
+-- line 1771 ----------------------------------------
+-- line 1785 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        /**
+    .    .    .     .    .    .     .    .    .         * @brief Constructs a uniform_real_distribution object.
+    .    .    .     .    .    .     .    .    .         *
+    .    .    .     .    .    .     .    .    .         * @param __a [IN]  The lower bound of the distribution.
+    .    .    .     .    .    .     .    .    .         * @param __b [IN]  The upper bound of the distribution.
+    .    .    .     .    .    .     .    .    .         */
+    .    .    .     .    .    .     .    .    .        explicit
+    6    0    0     0    0    0     4    0    0        uniform_real_distribution(_RealType __a, _RealType __b = _RealType(1))
+    7    0    0     3    0    0     1    0    0        : _M_param(__a, __b)
+    3    0    0     2    0    0     0    0    0        { }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        explicit
+    .    .    .     .    .    .     .    .    .        uniform_real_distribution(const param_type& __p)
+    .    .    .     .    .    .     .    .    .        : _M_param(__p)
+    .    .    .     .    .    .     .    .    .        { }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        /**
+    .    .    .     .    .    .     .    .    .         * @brief Resets the distribution state.
+-- line 1803 ----------------------------------------
+-- line 1844 ----------------------------------------
+    .    .    .     .    .    .     .    .    .        max() const
+    .    .    .     .    .    .     .    .    .        { return this->b(); }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        /**
+    .    .    .     .    .    .     .    .    .         * @brief Generating functions.
+    .    .    .     .    .    .     .    .    .         */
+    .    .    .     .    .    .     .    .    .        template<typename _UniformRandomNumberGenerator>
+    .    .    .     .    .    .     .    .    .  	result_type
+2,000    0    0     0    0    0 1,200    0    0  	operator()(_UniformRandomNumberGenerator& __urng)
+3,200    0    0 2,000    0    0   400    0    0          { return this->operator()(__urng, _M_param); }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        template<typename _UniformRandomNumberGenerator>
+    .    .    .     .    .    .     .    .    .  	result_type
+2,400    1    1     0    0    0 1,600    0    0  	operator()(_UniformRandomNumberGenerator& __urng,
+    .    .    .     .    .    .     .    .    .  		   const param_type& __p)
+    .    .    .     .    .    .     .    .    .  	{
+    .    .    .     .    .    .     .    .    .  	  __detail::_Adaptor<_UniformRandomNumberGenerator, result_type>
+2,000    0    0   400    0    0   400    0    0  	    __aurng(__urng);
+8,400    0    0 2,400    0    0 2,800    0    0  	  return (__aurng() * (__p.b() - __p.a())) + __p.a();
+  800    0    0   800    0    0     0    0    0  	}
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        template<typename _ForwardIterator,
+    .    .    .     .    .    .     .    .    .  	       typename _UniformRandomNumberGenerator>
+    .    .    .     .    .    .     .    .    .  	void
+    .    .    .     .    .    .     .    .    .  	__generate(_ForwardIterator __f, _ForwardIterator __t,
+    .    .    .     .    .    .     .    .    .  		   _UniformRandomNumberGenerator& __urng)
+    .    .    .     .    .    .     .    .    .  	{ this->__generate(__f, __t, __urng, _M_param); }
+    .    .    .     .    .    .     .    .    .  
+-- line 1871 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/IO.h
+--------------------------------------------------------------------------------
+Ir    I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 42 ----------------------------------------
+    .    .    .     .    .    .     .    .    .    *  - \b matPrefix string printed at the beginning of the matrix
+    .    .    .     .    .    .     .    .    .    *  - \b matSuffix string printed at the end of the matrix
+    .    .    .     .    .    .     .    .    .    *
+    .    .    .     .    .    .     .    .    .    * Example: \include IOFormat.cpp
+    .    .    .     .    .    .     .    .    .    * Output: \verbinclude IOFormat.out
+    .    .    .     .    .    .     .    .    .    *
+    .    .    .     .    .    .     .    .    .    * \sa DenseBase::format(), class WithFormat
+    .    .    .     .    .    .     .    .    .    */
+   34    3    2     9    0    0     9    0    0  struct IOFormat
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    /** Default constructor, see class IOFormat for the meaning of the parameters */
+   10    1    1     0    0    0     8    0    0    IOFormat(int _precision = StreamPrecision, int _flags = 0,
+    .    .    .     .    .    .     .    .    .      const std::string& _coeffSeparator = " ",
+    .    .    .     .    .    .     .    .    .      const std::string& _rowSeparator = "\n", const std::string& _rowPrefix="", const std::string& _rowSuffix="",
+    .    .    .     .    .    .     .    .    .      const std::string& _matPrefix="", const std::string& _matSuffix="")
+    .    .    .     .    .    .     .    .    .    : matPrefix(_matPrefix), matSuffix(_matSuffix), rowPrefix(_rowPrefix), rowSuffix(_rowSuffix), rowSeparator(_rowSeparator),
+   53    3    3    17    0    0    11    0    0      rowSpacer(""), coeffSeparator(_coeffSeparator), precision(_precision), flags(_flags)
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      // TODO check if rowPrefix, rowSuffix or rowSeparator contains a newline
+    .    .    .     .    .    .     .    .    .      // don't add rowSpacer if columns are not to be aligned
+    5    0    0     2    0    0     0    0    0      if((flags & DontAlignCols))
+    .    .    .     .    .    .     .    .    .        return;
+    6    1    1     1    0    0     2    0    0      int i = int(matSuffix.length())-1;
+    5    1    1     1    0    0     0    0    0      while (i>=0 && matSuffix[i]!='\n')
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        rowSpacer += ' ';
+    .    .    .     .    .    .     .    .    .        i--;
+    .    .    .     .    .    .     .    .    .      }
+    4    0    0     3    0    0     0    0    0    }
+    .    .    .     .    .    .     .    .    .    std::string matPrefix, matSuffix;
+    .    .    .     .    .    .     .    .    .    std::string rowPrefix, rowSuffix, rowSeparator, rowSpacer;
+    .    .    .     .    .    .     .    .    .    std::string coeffSeparator;
+    .    .    .     .    .    .     .    .    .    int precision;
+    .    .    .     .    .    .     .    .    .    int flags;
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  /** \class WithFormat
+-- line 78 ----------------------------------------
+-- line 121 ----------------------------------------
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      return NumTraits<Scalar>::digits10();
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  /** \internal
+    .    .    .     .    .    .     .    .    .    * print the matrix \a _m to the output stream \a s using the output format \a fmt */
+    .    .    .     .    .    .     .    .    .  template<typename Derived>
+    7    1    1     0    0    0     5    0    0  std::ostream & print_matrix(std::ostream & s, const Derived& _m, const IOFormat& fmt)
+    .    .    .     .    .    .     .    .    .  {
+    7    0    0     1    0    0     1    0    0    if(_m.size() == 0)
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      s << fmt.matPrefix << fmt.matSuffix;
+    .    .    .     .    .    .     .    .    .      return s;
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .    
+    2    1    1     1    0    0     1    0    0    typename Derived::Nested m = _m;
+    .    .    .     .    .    .     .    .    .    typedef typename Derived::Scalar Scalar;
+    .    .    .     .    .    .     .    .    .  
+    1    0    0     0    0    0     1    0    0    Index width = 0;
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    std::streamsize explicit_precision;
+    4    0    0     2    0    0     0    0    0    if(fmt.precision == StreamPrecision)
+    .    .    .     .    .    .     .    .    .    {
+    2    1    1     0    0    0     1    0    0      explicit_precision = 0;
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .    else if(fmt.precision == FullPrecision)
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      if (NumTraits<Scalar>::IsInteger)
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        explicit_precision = 0;
+    .    .    .     .    .    .     .    .    .      }
+    .    .    .     .    .    .     .    .    .      else
+-- line 153 ----------------------------------------
+-- line 155 ----------------------------------------
+    .    .    .     .    .    .     .    .    .        explicit_precision = significant_decimals_impl<Scalar>::run();
+    .    .    .     .    .    .     .    .    .      }
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .    else
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      explicit_precision = fmt.precision;
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .  
+    1    0    0     0    0    0     1    0    0    std::streamsize old_precision = 0;
+    2    1    1     1    0    0     0    0    0    if(explicit_precision) old_precision = s.precision(explicit_precision);
+    .    .    .     .    .    .     .    .    .  
+    6    1    1     2    0    0     1    0    0    bool align_cols = !(fmt.flags & DontAlignCols);
+    2    0    0     1    0    0     0    0    0    if(align_cols)
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      // compute the largest width
+  188    0    0    62    0    0    22    0    0      for(Index j = 0; j < m.cols(); ++j)
+3,760    1    1 1,240    0    0   440    0    0        for(Index i = 0; i < m.rows(); ++i)
+    .    .    .     .    .    .     .    .    .        {
+2,400    0    0     0    0    0   800    0    0          std::stringstream sstr;
+4,800    1    1 1,600    2    0   400    0    0          sstr.copyfmt(s);
+4,800    1    1 1,600   22    0   800    0    0          sstr << m.coeff(i,j);
+7,600    1    1   400    0    0 2,400    0    0          width = std::max<Index>(width, Index(sstr.str().length()));
+    .    .    .     .    .    .     .    .    .        }
+    .    .    .     .    .    .     .    .    .    }
+    5    1    1     2    0    0     1    0    0    s << fmt.matPrefix;
+  188    0    0    62    0    0    22    0    0    for(Index i = 0; i < m.rows(); ++i)
+    .    .    .     .    .    .     .    .    .    {
+   40    1    1    20    0    0     0    0    0      if (i)
+  114    0    0    38    0    0    19    0    0        s << fmt.rowSpacer;
+  120    0    0    40    0    0    20    0    0      s << fmt.rowPrefix;
+  280    1    1   120    0    0    20    0    0      if(width) s.width(width);
+  220    1    1    80    2    0    40    0    0      s << m.coeff(i, 0);
+3,580    1    1 1,180    0    0   420    0    0      for(Index j = 1; j < m.cols(); ++j)
+    .    .    .     .    .    .     .    .    .      {
+2,280    0    0   760    0    0   380    0    0        s << fmt.coeffSeparator;
+5,320    1    1 2,280    0    0   380    0    0        if (width) s.width(width);
+4,180    1    1 1,900    4    0   760    0    0        s << m.coeff(i, j);
+    .    .    .     .    .    .     .    .    .      }
+  120    0    0    40    0    0    20    0    0      s << fmt.rowSuffix;
+  160    1    1    40    0    0    20    0    0      if( i < m.rows() - 1)
+  114    0    0    38    0    0    19    0    0        s << fmt.rowSeparator;
+    .    .    .     .    .    .     .    .    .    }
+    6    1    1     2    0    0     1    0    0    s << fmt.matSuffix;
+    2    0    0     1    0    0     0    0    0    if(explicit_precision) s.precision(old_precision);
+    2    0    0     1    0    0     0    0    0    return s;
+    4    0    0     3    0    0     0    0    0  }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  } // end namespace internal
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  /** \relates DenseBase
+    .    .    .     .    .    .     .    .    .    *
+    .    .    .     .    .    .     .    .    .    * Outputs the matrix, to the given stream.
+    .    .    .     .    .    .     .    .    .    *
+    .    .    .     .    .    .     .    .    .    * If you wish to print the matrix with a format different than the default, use DenseBase::format().
+    .    .    .     .    .    .     .    .    .    *
+    .    .    .     .    .    .     .    .    .    * It is also possible to change the default format by defining EIGEN_DEFAULT_IO_FORMAT before including Eigen headers.
+    .    .    .     .    .    .     .    .    .    * If not defined, this will automatically be defined to Eigen::IOFormat(), that is the Eigen::IOFormat with default parameters.
+    .    .    .     .    .    .     .    .    .    *
+    .    .    .     .    .    .     .    .    .    * \sa DenseBase::format()
+    .    .    .     .    .    .     .    .    .    */
+    .    .    .     .    .    .     .    .    .  template<typename Derived>
+    6    1    1     0    0    0     4    0    0  std::ostream & operator <<
+    .    .    .     .    .    .     .    .    .  (std::ostream & s,
+    .    .    .     .    .    .     .    .    .   const DenseBase<Derived> & m)
+    .    .    .     .    .    .     .    .    .  {
+  119   10    9     2    0    0    31    0    0    return internal::print_matrix(s, m.eval(), EIGEN_DEFAULT_IO_FORMAT);
+    3    0    0     3    1    0     0    0    0  }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  } // end namespace Eigen
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  #endif // EIGEN_IO_H
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/CoreEvaluators.h
+--------------------------------------------------------------------------------
+Ir    I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 101 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+    .    .    .     .    .    .     .    .    .    explicit evaluator(const T& xpr) : evaluator<T>(xpr) {}
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  // ---------- base class for all evaluators ----------
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  template<typename ExpressionType>
+6,940    1    1 2,082    0    0 2,082    1    0  struct evaluator_base : public noncopyable
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    // TODO that's not very nice to have to propagate all these traits. They are currently only needed to handle outer,inner indices.
+    .    .    .     .    .    .     .    .    .    typedef traits<ExpressionType> ExpressionTraits;
+    .    .    .     .    .    .     .    .    .    
+    .    .    .     .    .    .     .    .    .    enum {
+    .    .    .     .    .    .     .    .    .      Alignment = 0
+    .    .    .     .    .    .     .    .    .    };
+    .    .    .     .    .    .     .    .    .  };
+-- line 117 ----------------------------------------
+-- line 119 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  // -------------------- Matrix and Array --------------------
+    .    .    .     .    .    .     .    .    .  //
+    .    .    .     .    .    .     .    .    .  // evaluator<PlainObjectBase> is a common base class for the
+    .    .    .     .    .    .     .    .    .  // Matrix and Array evaluators.
+    .    .    .     .    .    .     .    .    .  // Here we directly specialize evaluator. This is not really a unary expression, and it is, by definition, dense,
+    .    .    .     .    .    .     .    .    .  // so no need for more sophisticated dispatching.
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  template<typename Derived>
+3,460    0    0 1,038    0    0 1,038    0    0  struct evaluator<PlainObjectBase<Derived> >
+    .    .    .     .    .    .     .    .    .    : evaluator_base<Derived>
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    typedef PlainObjectBase<Derived> PlainObjectType;
+    .    .    .     .    .    .     .    .    .    typedef typename PlainObjectType::Scalar Scalar;
+    .    .    .     .    .    .     .    .    .    typedef typename PlainObjectType::CoeffReturnType CoeffReturnType;
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    enum {
+    .    .    .     .    .    .     .    .    .      IsRowMajor = PlainObjectType::IsRowMajor,
+-- line 135 ----------------------------------------
+-- line 146 ----------------------------------------
+    .    .    .     .    .    .     .    .    .      : m_data(0),
+    .    .    .     .    .    .     .    .    .        m_outerStride(IsVectorAtCompileTime  ? 0 
+    .    .    .     .    .    .     .    .    .                                             : int(IsRowMajor) ? ColsAtCompileTime 
+    .    .    .     .    .    .     .    .    .                                             : RowsAtCompileTime)
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      EIGEN_INTERNAL_CHECK_COST_VALUE(CoeffReadCost);
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .    
+2,076    1    1     0    0    0 1,384    0    0    EIGEN_DEVICE_FUNC explicit evaluator(const PlainObjectType& m)
+5,536    1    1 1,730    0    0 1,730    0    0      : m_data(m.data()), m_outerStride(IsVectorAtCompileTime ? 0 : m.outerStride()) 
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      EIGEN_INTERNAL_CHECK_COST_VALUE(CoeffReadCost);
+1,730    0    0 1,038    0    0     0    0    0    }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    .    .    .     .    .    .     .    .    .    CoeffReturnType coeff(Index row, Index col) const
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      if (IsRowMajor)
+    .    .    .     .    .    .     .    .    .        return m_data[row * m_outerStride.value() + col];
+    .    .    .     .    .    .     .    .    .      else
+    .    .    .     .    .    .     .    .    .        return m_data[row + col * m_outerStride.value()];
+-- line 166 ----------------------------------------
+-- line 168 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    .    .    .     .    .    .     .    .    .    CoeffReturnType coeff(Index index) const
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      return m_data[index];
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+2,415    0    0     0    0    0 1,725    0    0    Scalar& coeffRef(Index row, Index col)
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      if (IsRowMajor)
+    .    .    .     .    .    .     .    .    .        return const_cast<Scalar*>(m_data)[row * m_outerStride.value() + col];
+    .    .    .     .    .    .     .    .    .      else
+4,140    1    1 1,725    0    0   345    0    0        return const_cast<Scalar*>(m_data)[row + col * m_outerStride.value()];
+1,380    0    0 1,035    0    0     0    0    0    }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+  400    1    1     0    0    0   300    0    0    Scalar& coeffRef(Index index)
+    .    .    .     .    .    .     .    .    .    {
+  500    0    0   300    0    0     0    0    0      return const_cast<Scalar*>(m_data)[index];
+  200    0    0   200    0    0     0    0    0    }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template<int LoadMode, typename PacketType>
+    .    .    .     .    .    .     .    .    .    EIGEN_STRONG_INLINE
+    .    .    .     .    .    .     .    .    .    PacketType packet(Index row, Index col) const
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      if (IsRowMajor)
+    .    .    .     .    .    .     .    .    .        return ploadt<PacketType, LoadMode>(m_data + row * m_outerStride.value() + col);
+    .    .    .     .    .    .     .    .    .      else
+-- line 196 ----------------------------------------
+-- line 228 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    // We do not need to know the outer stride for vectors
+    .    .    .     .    .    .     .    .    .    variable_if_dynamic<Index, IsVectorAtCompileTime  ? 0 
+    .    .    .     .    .    .     .    .    .                                                      : int(IsRowMajor) ? ColsAtCompileTime 
+    .    .    .     .    .    .     .    .    .                                                      : RowsAtCompileTime> m_outerStride;
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  template<typename Scalar, int Rows, int Cols, int Options, int MaxRows, int MaxCols>
+3,460    2    2 1,038    0    0 1,038    0    0  struct evaluator<Matrix<Scalar, Rows, Cols, Options, MaxRows, MaxCols> >
+    .    .    .     .    .    .     .    .    .    : evaluator<PlainObjectBase<Matrix<Scalar, Rows, Cols, Options, MaxRows, MaxCols> > >
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    typedef Matrix<Scalar, Rows, Cols, Options, MaxRows, MaxCols> XprType;
+    .    .    .     .    .    .     .    .    .    
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC evaluator() {}
+    .    .    .     .    .    .     .    .    .  
+1,730    1    1     0    0    0 1,038    0    0    EIGEN_DEVICE_FUNC explicit evaluator(const XprType& m)
+1,730    1    1   692    0    0   346    0    0      : evaluator<PlainObjectBase<XprType> >(m) 
+1,038    0    0   692    0    0     0    0    0    { }
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  template<typename Scalar, int Rows, int Cols, int Options, int MaxRows, int MaxCols>
+    .    .    .     .    .    .     .    .    .  struct evaluator<Array<Scalar, Rows, Cols, Options, MaxRows, MaxCols> >
+    .    .    .     .    .    .     .    .    .    : evaluator<PlainObjectBase<Array<Scalar, Rows, Cols, Options, MaxRows, MaxCols> > >
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    typedef Array<Scalar, Rows, Cols, Options, MaxRows, MaxCols> XprType;
+    .    .    .     .    .    .     .    .    .  
+-- line 253 ----------------------------------------
+-- line 352 ----------------------------------------
+    .    .    .     .    .    .     .    .    .    template <typename T, typename IndexType> EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE T packetOp(const NullaryOp& op, IndexType i) const { return op.template packetOp<T>(i); }
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  template<typename Scalar,typename NullaryOp>
+    .    .    .     .    .    .     .    .    .  struct nullary_wrapper<Scalar,NullaryOp,true,false,false>
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    template <typename IndexType>
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Scalar operator()(const NullaryOp& op, IndexType=0, IndexType=0) const { return op(); }
+1,200    2    2   300    0    0   600    0    0    template <typename T, typename IndexType> EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE T packetOp(const NullaryOp& op, IndexType=0, IndexType=0) const { return op.template packetOp<T>(); }
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  template<typename Scalar,typename NullaryOp>
+    .    .    .     .    .    .     .    .    .  struct nullary_wrapper<Scalar,NullaryOp,false,false,true>
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    template <typename IndexType>
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Scalar operator()(const NullaryOp& op, IndexType i, IndexType j=0) const { return op(i,j); }
+    .    .    .     .    .    .     .    .    .    template <typename T, typename IndexType> EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE T packetOp(const NullaryOp& op, IndexType i, IndexType j=0) const { return op.template packetOp<T>(i,j); }
+-- line 368 ----------------------------------------
+-- line 447 ----------------------------------------
+    .    .    .     .    .    .     .    .    .      has_nullary_operator<NullaryOp,nullary_wrapper_workaround_msvc<IndexType> >::value,
+    .    .    .     .    .    .     .    .    .      has_unary_operator<NullaryOp,nullary_wrapper_workaround_msvc<IndexType> >::value,
+    .    .    .     .    .    .     .    .    .      has_binary_operator<NullaryOp,nullary_wrapper_workaround_msvc<IndexType> >::value>().template packetOp<T>(op,i);
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  #endif // MSVC workaround
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  template<typename NullaryOp, typename PlainObjectType>
+   10    0    0     3    0    0     3    0    0  struct evaluator<CwiseNullaryOp<NullaryOp,PlainObjectType> >
+    .    .    .     .    .    .     .    .    .    : evaluator_base<CwiseNullaryOp<NullaryOp,PlainObjectType> >
+    .    .    .     .    .    .     .    .    .  {
+    .    .    .     .    .    .     .    .    .    typedef CwiseNullaryOp<NullaryOp,PlainObjectType> XprType;
+    .    .    .     .    .    .     .    .    .    typedef typename internal::remove_all<PlainObjectType>::type PlainObjectTypeCleaned;
+    .    .    .     .    .    .     .    .    .    
+    .    .    .     .    .    .     .    .    .    enum {
+    .    .    .     .    .    .     .    .    .      CoeffReadCost = internal::functor_traits<NullaryOp>::Cost,
+    .    .    .     .    .    .     .    .    .      
+-- line 463 ----------------------------------------
+-- line 464 ----------------------------------------
+    .    .    .     .    .    .     .    .    .      Flags = (evaluator<PlainObjectTypeCleaned>::Flags
+    .    .    .     .    .    .     .    .    .            &  (  HereditaryBits
+    .    .    .     .    .    .     .    .    .                | (functor_has_linear_access<NullaryOp>::ret  ? LinearAccessBit : 0)
+    .    .    .     .    .    .     .    .    .                | (functor_traits<NullaryOp>::PacketAccess    ? PacketAccessBit : 0)))
+    .    .    .     .    .    .     .    .    .            | (functor_traits<NullaryOp>::IsRepeatable ? 0 : EvalBeforeNestingBit),
+    .    .    .     .    .    .     .    .    .      Alignment = AlignedMax
+    .    .    .     .    .    .     .    .    .    };
+    .    .    .     .    .    .     .    .    .  
+    6    1    1     0    0    0     4    0    0    EIGEN_DEVICE_FUNC explicit evaluator(const XprType& n)
+   10    0    0     3    0    0     3    0    0      : m_functor(n.functor()), m_wrapper()
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      EIGEN_INTERNAL_CHECK_COST_VALUE(CoeffReadCost);
+    5    0    0     3    0    0     0    0    0    }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    typedef typename XprType::CoeffReturnType CoeffReturnType;
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template <typename IndexType>
+    .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE
+    .    .    .     .    .    .     .    .    .    CoeffReturnType coeff(IndexType row, IndexType col) const
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      return m_wrapper(m_functor, row, col);
+-- line 484 ----------------------------------------
+-- line 495 ----------------------------------------
+    .    .    .     .    .    .     .    .    .    EIGEN_STRONG_INLINE
+    .    .    .     .    .    .     .    .    .    PacketType packet(IndexType row, IndexType col) const
+    .    .    .     .    .    .     .    .    .    {
+    .    .    .     .    .    .     .    .    .      return m_wrapper.template packetOp<PacketType>(m_functor, row, col);
+    .    .    .     .    .    .     .    .    .    }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template<int LoadMode, typename PacketType, typename IndexType>
+    .    .    .     .    .    .     .    .    .    EIGEN_STRONG_INLINE
+  500    1    1     0    0    0   300    0    0    PacketType packet(IndexType index) const
+    .    .    .     .    .    .     .    .    .    {
+  700    0    0   300    0    0   100    0    0      return m_wrapper.template packetOp<PacketType>(m_functor, index);
+  200    0    0   200    0    0     0    0    0    }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  protected:
+    .    .    .     .    .    .     .    .    .    const NullaryOp m_functor;
+    .    .    .     .    .    .     .    .    .    const internal::nullary_wrapper<CoeffReturnType,NullaryOp> m_wrapper;
+    .    .    .     .    .    .     .    .    .  };
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  // -------------------- CwiseUnaryOp --------------------
+    .    .    .     .    .    .     .    .    .  
+-- line 514 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/9.2.0/bits/stl_bvector.h
+--------------------------------------------------------------------------------
+Ir     I1mr ILmr Dr     D1mr DLmr Dw    D1mw DLmw 
+
+-- line 69 ----------------------------------------
+     .    .    .      .    .    .     .    .    .    typedef unsigned long _Bit_type;
+     .    .    .      .    .    .     .    .    .    enum { _S_word_bit = int(__CHAR_BIT__ * sizeof(_Bit_type)) };
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .    struct _Bit_reference
+     .    .    .      .    .    .     .    .    .    {
+     .    .    .      .    .    .     .    .    .      _Bit_type * _M_p;
+     .    .    .      .    .    .     .    .    .      _Bit_type _M_mask;
+     .    .    .      .    .    .     .    .    .  
+ 6,465    1    1      0    0    0 5,172    0    0      _Bit_reference(_Bit_type * __x, _Bit_type __y)
+11,637    0    0  7,758    0    0 2,586    0    0      : _M_p(__x), _M_mask(__y) { }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      _Bit_reference() _GLIBCXX_NOEXCEPT : _M_p(0), _M_mask(0) { }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+     .    .    .      .    .    .     .    .    .      _Bit_reference(const _Bit_reference&) = default;
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+ 2,679    0    0      0    0    0 1,786    0    0      operator bool() const _GLIBCXX_NOEXCEPT
+ 8,930    0    0  6,251    0    0     0    0    0      { return !!(*_M_p & _M_mask); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      _Bit_reference&
+ 2,000    1    1      0    0    0 1,200    0    0      operator=(bool __x) _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .      {
+   800    0    0    400    0    0     0    0    0        if (__x)
+ 4,000    1    1  2,800    0    0   400    0    0  	*_M_p |= _M_mask;
+     .    .    .      .    .    .     .    .    .        else
+     .    .    .      .    .    .     .    .    .  	*_M_p &= ~_M_mask;
+   400    0    0    400    0    0     0    0    0        return *this;
+   800    0    0    800    0    0     0    0    0      }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      _Bit_reference&
+     .    .    .      .    .    .     .    .    .      operator=(const _Bit_reference& __x) _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .      { return *this = bool(__x); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      bool
+     .    .    .      .    .    .     .    .    .      operator==(const _Bit_reference& __x) const
+     .    .    .      .    .    .     .    .    .      { return bool(*this) == bool(__x); }
+-- line 105 ----------------------------------------
+-- line 140 ----------------------------------------
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .    struct _Bit_iterator_base
+     .    .    .      .    .    .     .    .    .    : public std::iterator<std::random_access_iterator_tag, bool>
+     .    .    .      .    .    .     .    .    .    {
+     .    .    .      .    .    .     .    .    .      _Bit_type * _M_p;
+     .    .    .      .    .    .     .    .    .      unsigned int _M_offset;
+     .    .    .      .    .    .     .    .    .  
+ 6,495    2    1      0    0    0 5,196    0    0      _Bit_iterator_base(_Bit_type * __x, unsigned int __y)
+11,691    0    0  7,794    0    0 2,598    0    0      : _M_p(__x), _M_offset(__y) { }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      void
+     .    .    .      .    .    .     .    .    .      _M_bump_up()
+     .    .    .      .    .    .     .    .    .      {
+     .    .    .      .    .    .     .    .    .        if (_M_offset++ == int(_S_word_bit) - 1)
+     .    .    .      .    .    .     .    .    .  	{
+     .    .    .      .    .    .     .    .    .  	  _M_offset = 0;
+     .    .    .      .    .    .     .    .    .  	  ++_M_p;
+-- line 157 ----------------------------------------
+-- line 164 ----------------------------------------
+     .    .    .      .    .    .     .    .    .        if (_M_offset-- == 0)
+     .    .    .      .    .    .     .    .    .  	{
+     .    .    .      .    .    .     .    .    .  	  _M_offset = int(_S_word_bit) - 1;
+     .    .    .      .    .    .     .    .    .  	  --_M_p;
+     .    .    .      .    .    .     .    .    .  	}
+     .    .    .      .    .    .     .    .    .      }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      void
+     4    0    0      0    0    0     3    0    0      _M_incr(ptrdiff_t __i)
+     .    .    .      .    .    .     .    .    .      {
+     6    1    1      3    0    0     1    0    0        difference_type __n = __i + _M_offset;
+    11    0    0      4    0    0     1    0    0        _M_p += __n / int(_S_word_bit);
+     7    0    0      1    0    0     1    0    0        __n = __n % int(_S_word_bit);
+     2    0    0      1    0    0     0    0    0        if (__n < 0)
+     .    .    .      .    .    .     .    .    .  	{
+     .    .    .      .    .    .     .    .    .  	  __n += int(_S_word_bit);
+     .    .    .      .    .    .     .    .    .  	  --_M_p;
+     .    .    .      .    .    .     .    .    .  	}
+     4    0    0      2    0    0     1    0    0        _M_offset = static_cast<unsigned int>(__n);
+     3    0    0      2    0    0     0    0    0      }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      bool
+     .    .    .      .    .    .     .    .    .      operator==(const _Bit_iterator_base& __i) const
+     .    .    .      .    .    .     .    .    .      { return _M_p == __i._M_p && _M_offset == __i._M_offset; }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      bool
+     .    .    .      .    .    .     .    .    .      operator<(const _Bit_iterator_base& __i) const
+     .    .    .      .    .    .     .    .    .      {
+-- line 191 ----------------------------------------
+-- line 218 ----------------------------------------
+     .    .    .      .    .    .     .    .    .    }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .    struct _Bit_iterator : public _Bit_iterator_base
+     .    .    .      .    .    .     .    .    .    {
+     .    .    .      .    .    .     .    .    .      typedef _Bit_reference  reference;
+     .    .    .      .    .    .     .    .    .      typedef _Bit_reference* pointer;
+     .    .    .      .    .    .     .    .    .      typedef _Bit_iterator   iterator;
+     .    .    .      .    .    .     .    .    .  
+    60    4    2     15    0    0    15    0    0      _Bit_iterator() : _Bit_iterator_base(0, 0) { }
+     .    .    .      .    .    .     .    .    .  
+ 7,764    0    0      0    0    0 5,176    0    0      _Bit_iterator(_Bit_type * __x, unsigned int __y)
+11,646    1    1  6,470    0    0 1,294    0    0      : _Bit_iterator_base(__x, __y) { }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      iterator
+     .    .    .      .    .    .     .    .    .      _M_const_cast() const
+     .    .    .      .    .    .     .    .    .      { return *this; }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      reference
+ 5,172    0    0      0    0    0 2,586    0    0      operator*() const
+19,395    0    0 10,344    0    0 1,293    0    0      { return reference(_M_p, 1UL << _M_offset); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      iterator&
+     .    .    .      .    .    .     .    .    .      operator++()
+     .    .    .      .    .    .     .    .    .      {
+     .    .    .      .    .    .     .    .    .        _M_bump_up();
+     .    .    .      .    .    .     .    .    .        return *this;
+     .    .    .      .    .    .     .    .    .      }
+     .    .    .      .    .    .     .    .    .  
+-- line 245 ----------------------------------------
+-- line 262 ----------------------------------------
+     .    .    .      .    .    .     .    .    .      operator--(int)
+     .    .    .      .    .    .     .    .    .      {
+     .    .    .      .    .    .     .    .    .        iterator __tmp = *this;
+     .    .    .      .    .    .     .    .    .        _M_bump_down();
+     .    .    .      .    .    .     .    .    .        return __tmp;
+     .    .    .      .    .    .     .    .    .      }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      iterator&
+     5    0    0      0    0    0     3    0    0      operator+=(difference_type __i)
+     .    .    .      .    .    .     .    .    .      {
+     5    0    0      2    0    0     1    0    0        _M_incr(__i);
+     1    0    0      1    0    0     0    0    0        return *this;
+     2    0    0      2    0    0     0    0    0      }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      iterator&
+     .    .    .      .    .    .     .    .    .      operator-=(difference_type __i)
+     .    .    .      .    .    .     .    .    .      {
+     .    .    .      .    .    .     .    .    .        *this += -__i;
+     .    .    .      .    .    .     .    .    .        return *this;
+     .    .    .      .    .    .     .    .    .      }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      iterator
+     5    2    2      0    0    0     3    0    0      operator+(difference_type __i) const
+     .    .    .      .    .    .     .    .    .      {
+     5    0    0      3    0    0     2    0    0        iterator __tmp = *this;
+    11    1    1      5    0    0     3    0    0        return __tmp += __i;
+     2    0    0      2    0    0     0    0    0      }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      iterator
+     .    .    .      .    .    .     .    .    .      operator-(difference_type __i) const
+     .    .    .      .    .    .     .    .    .      {
+     .    .    .      .    .    .     .    .    .        iterator __tmp = *this;
+     .    .    .      .    .    .     .    .    .        return __tmp -= __i;
+     .    .    .      .    .    .     .    .    .      }
+     .    .    .      .    .    .     .    .    .  
+-- line 296 ----------------------------------------
+-- line 436 ----------------------------------------
+     .    .    .      .    .    .     .    .    .        typedef typename _Bit_alloc_traits::pointer _Bit_pointer;
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        struct _Bvector_impl_data
+     .    .    .      .    .    .     .    .    .        {
+     .    .    .      .    .    .     .    .    .  	_Bit_iterator 	_M_start;
+     .    .    .      .    .    .     .    .    .  	_Bit_iterator 	_M_finish;
+     .    .    .      .    .    .     .    .    .  	_Bit_pointer 	_M_end_of_storage;
+     .    .    .      .    .    .     .    .    .  
+     8    3    2      0    0    0     4    0    0  	_Bvector_impl_data() _GLIBCXX_NOEXCEPT
+    18    0    0      6    0    0     6    0    0  	: _M_start(), _M_finish(), _M_end_of_storage()
+     6    0    0      4    0    0     0    0    0  	{ }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+     .    .    .      .    .    .     .    .    .  	_Bvector_impl_data(_Bvector_impl_data&& __x) noexcept
+     .    .    .      .    .    .     .    .    .  	: _M_start(__x._M_start), _M_finish(__x._M_finish)
+     .    .    .      .    .    .     .    .    .  	, _M_end_of_storage(__x._M_end_of_storage)
+     .    .    .      .    .    .     .    .    .  	{ __x._M_reset(); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  	void
+-- line 454 ----------------------------------------
+-- line 457 ----------------------------------------
+     .    .    .      .    .    .     .    .    .  	  this->_M_start = __x._M_start;
+     .    .    .      .    .    .     .    .    .  	  this->_M_finish = __x._M_finish;
+     .    .    .      .    .    .     .    .    .  	  this->_M_end_of_storage = __x._M_end_of_storage;
+     .    .    .      .    .    .     .    .    .  	  __x._M_reset();
+     .    .    .      .    .    .     .    .    .  	}
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  	void
+     4    0    0      0    0    0     2    0    0  	_M_reset() _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .  	{
+    15    0    0      7    0    0     5    0    0  	  _M_start = _M_finish = _Bit_iterator();
+     2    0    0      1    0    0     1    0    0  	  _M_end_of_storage = _Bit_pointer();
+     3    0    0      2    0    0     0    0    0  	}
+     .    .    .      .    .    .     .    .    .        };
+     .    .    .      .    .    .     .    .    .  
+    20    0    0      6    0    0     6    0    0        struct _Bvector_impl
+     .    .    .      .    .    .     .    .    .  	: public _Bit_alloc_type, public _Bvector_impl_data
+     .    .    .      .    .    .     .    .    .  	{
+     .    .    .      .    .    .     .    .    .  	public:
+     4    0    0      0    0    0     2    0    0  	  _Bvector_impl() _GLIBCXX_NOEXCEPT_IF(
+     .    .    .      .    .    .     .    .    .  		is_nothrow_default_constructible<_Bit_alloc_type>::value)
+     6    0    0      2    0    0     2    0    0  	  : _Bit_alloc_type()
+     3    0    0      2    0    0     0    0    0  	  { }
+     .    .    .      .    .    .     .    .    .  
+     5    1    1      0    0    0     3    0    0  	  _Bvector_impl(const _Bit_alloc_type& __a) _GLIBCXX_NOEXCEPT
+     8    0    0      3    0    0     2    0    0  	  : _Bit_alloc_type(__a)
+     3    0    0      2    0    0     0    0    0  	  { }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+     .    .    .      .    .    .     .    .    .  	_Bvector_impl(_Bvector_impl&&) = default;
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  	_Bit_type*
+     8    1    0      0    0    0     4    0    0  	_M_end_addr() const _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .  	{
+     8    0    0      4    0    0     0    0    0  	  if (this->_M_end_of_storage)
+    14    0    0      4    0    0     2    0    0  	    return std::__addressof(this->_M_end_of_storage[-1]) + 1;
+     .    .    .      .    .    .     .    .    .  	  return 0;
+     4    0    0      4    0    0     0    0    0  	}
+     .    .    .      .    .    .     .    .    .        };
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      public:
+     .    .    .      .    .    .     .    .    .        typedef _Alloc allocator_type;
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        _Bit_alloc_type&
+     6    1    0      0    0    0     4    0    0        _M_get_Bit_allocator() _GLIBCXX_NOEXCEPT
+     6    0    0      6    0    0     0    0    0        { return this->_M_impl; }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        const _Bit_alloc_type&
+     .    .    .      .    .    .     .    .    .        _M_get_Bit_allocator() const _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .        { return this->_M_impl; }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        allocator_type
+     .    .    .      .    .    .     .    .    .        get_allocator() const _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .        { return allocator_type(_M_get_Bit_allocator()); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+    10    1    0      3    0    0     3    0    0        _Bvector_base() = default;
+     .    .    .      .    .    .     .    .    .  #else
+     .    .    .      .    .    .     .    .    .        _Bvector_base() { }
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+     6    1    1      0    0    0     4    0    0        _Bvector_base(const allocator_type& __a)
+    18    0    0      5    0    0     3    0    0        : _M_impl(__a) { }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+     .    .    .      .    .    .     .    .    .        _Bvector_base(_Bvector_base&&) = default;
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+     8    0    0      0    0    0     4    0    0        ~_Bvector_base()
+    18    0    0      8    0    0     4    0    0        { this->_M_deallocate(); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      protected:
+     .    .    .      .    .    .     .    .    .        _Bvector_impl _M_impl;
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        _Bit_pointer
+     5    1    1      0    0    0     3    0    0        _M_allocate(size_t __n)
+    10    0    0      4    0    0     2    0    0        { return _Bit_alloc_traits::allocate(_M_impl, _S_nword(__n)); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        void
+     8    1    1      0    0    0     4    0    0        _M_deallocate()
+     .    .    .      .    .    .     .    .    .        {
+     8    0    0      4    0    0     0    0    0  	if (_M_impl._M_start._M_p)
+     .    .    .      .    .    .     .    .    .  	  {
+     8    0    0      3    0    0     2    0    0  	    const size_t __n = _M_impl._M_end_addr() - _M_impl._M_start._M_p;
+     6    0    0      2    0    0     1    0    0  	    _Bit_alloc_traits::deallocate(_M_impl,
+     5    0    0      3    0    0     0    0    0  					  _M_impl._M_end_of_storage - __n,
+     .    .    .      .    .    .     .    .    .  					  __n);
+     3    0    0      1    0    0     1    0    0  	    _M_impl._M_reset();
+     .    .    .      .    .    .     .    .    .  	  }
+     6    0    0      4    0    0     0    0    0        }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+     .    .    .      .    .    .     .    .    .        void
+     .    .    .      .    .    .     .    .    .        _M_move_data(_Bvector_base&& __x) noexcept
+     .    .    .      .    .    .     .    .    .        { _M_impl._M_move_data(std::move(__x._M_impl)); }
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        static size_t
+     6    0    0      0    0    0     4    0    0        _S_nword(size_t __n)
+    10    0    0      6    0    0     0    0    0        { return (__n + int(_S_word_bit) - 1) / int(_S_word_bit); }
+     .    .    .      .    .    .     .    .    .      };
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  _GLIBCXX_END_NAMESPACE_CONTAINER
+     .    .    .      .    .    .     .    .    .  _GLIBCXX_END_NAMESPACE_VERSION
+     .    .    .      .    .    .     .    .    .  } // namespace std
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  // Declare a partial specialization of vector<T, Alloc>.
+     .    .    .      .    .    .     .    .    .  #include <bits/stl_vector.h>
+-- line 565 ----------------------------------------
+-- line 620 ----------------------------------------
+     .    .    .      .    .    .     .    .    .      protected:
+     .    .    .      .    .    .     .    .    .        using _Base::_M_allocate;
+     .    .    .      .    .    .     .    .    .        using _Base::_M_deallocate;
+     .    .    .      .    .    .     .    .    .        using _Base::_S_nword;
+     .    .    .      .    .    .     .    .    .        using _Base::_M_get_Bit_allocator;
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .      public:
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+    10    1    0      3    0    0     3    0    0        vector() = default;
+     .    .    .      .    .    .     .    .    .  #else
+     .    .    .      .    .    .     .    .    .        vector() { }
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        explicit
+     .    .    .      .    .    .     .    .    .        vector(const allocator_type& __a)
+     .    .    .      .    .    .     .    .    .        : _Base(__a) { }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+     .    .    .      .    .    .     .    .    .        explicit
+     .    .    .      .    .    .     .    .    .        vector(size_type __n, const allocator_type& __a = allocator_type())
+     .    .    .      .    .    .     .    .    .        : vector(__n, false, __a)
+     .    .    .      .    .    .     .    .    .        { }
+     .    .    .      .    .    .     .    .    .  
+     8    1    1      0    0    0     6    0    0        vector(size_type __n, const bool& __value,
+     .    .    .      .    .    .     .    .    .  	     const allocator_type& __a = allocator_type())
+     .    .    .      .    .    .     .    .    .  #else
+     .    .    .      .    .    .     .    .    .        explicit
+     .    .    .      .    .    .     .    .    .        vector(size_type __n, const bool& __value = bool(),
+     .    .    .      .    .    .     .    .    .  	     const allocator_type& __a = allocator_type())
+     .    .    .      .    .    .     .    .    .  #endif
+     5    0    0      2    0    0     1    0    0        : _Base(__a)
+     .    .    .      .    .    .     .    .    .        {
+     5    0    0      2    0    0     1    0    0  	_M_initialize(__n);
+     7    1    1      3    0    0     1    0    0  	_M_initialize_value(__value);
+     5    0    0      3    0    0     0    0    0        }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        vector(const vector& __x)
+     .    .    .      .    .    .     .    .    .        : _Base(_Bit_alloc_traits::_S_select_on_copy(__x._M_get_Bit_allocator()))
+     .    .    .      .    .    .     .    .    .        {
+     .    .    .      .    .    .     .    .    .  	_M_initialize(__x.size());
+     .    .    .      .    .    .     .    .    .  	_M_copy_aligned(__x.begin(), __x.end(), this->_M_impl._M_start);
+     .    .    .      .    .    .     .    .    .        }
+     .    .    .      .    .    .     .    .    .  
+-- line 662 ----------------------------------------
+-- line 706 ----------------------------------------
+     .    .    .      .    .    .     .    .    .  	       const allocator_type& __a = allocator_type())
+     .    .    .      .    .    .     .    .    .  	: _Base(__a)
+     .    .    .      .    .    .     .    .    .  	{
+     .    .    .      .    .    .     .    .    .  	  typedef typename std::__is_integer<_InputIterator>::__type _Integral;
+     .    .    .      .    .    .     .    .    .  	  _M_initialize_dispatch(__first, __last, _Integral());
+     .    .    .      .    .    .     .    .    .  	}
+     .    .    .      .    .    .     .    .    .  #endif
+     .    .    .      .    .    .     .    .    .  
+    20    1    0      6    0    0     6    0    0        ~vector() _GLIBCXX_NOEXCEPT { }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        vector&
+     .    .    .      .    .    .     .    .    .        operator=(const vector& __x)
+     .    .    .      .    .    .     .    .    .        {
+     .    .    .      .    .    .     .    .    .  	if (&__x == this)
+     .    .    .      .    .    .     .    .    .  	  return *this;
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+     .    .    .      .    .    .     .    .    .  	if (_Bit_alloc_traits::_S_propagate_on_copy_assign())
+-- line 722 ----------------------------------------
+-- line 878 ----------------------------------------
+     .    .    .      .    .    .     .    .    .        { return size_type(const_iterator(this->_M_impl._M_end_addr(), 0)
+     .    .    .      .    .    .     .    .    .  			 - begin()); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        bool
+     .    .    .      .    .    .     .    .    .        empty() const _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .        { return begin() == end(); }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        reference
+ 6,465    2    2      0    0    0 3,879    0    0        operator[](size_type __n)
+     .    .    .      .    .    .     .    .    .        {
+16,809    0    0  3,879    0    0 2,586    0    0  	return *iterator(this->_M_impl._M_start._M_p
+ 3,879    0    0  1,293    0    0     0    0    0  			 + __n / int(_S_word_bit), __n % int(_S_word_bit));
+ 2,586    0    0  2,586    0    0     0    0    0        }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        const_reference
+     .    .    .      .    .    .     .    .    .        operator[](size_type __n) const
+     .    .    .      .    .    .     .    .    .        {
+     .    .    .      .    .    .     .    .    .  	return *const_iterator(this->_M_impl._M_start._M_p
+     .    .    .      .    .    .     .    .    .  			     + __n / int(_S_word_bit), __n % int(_S_word_bit));
+     .    .    .      .    .    .     .    .    .        }
+     .    .    .      .    .    .     .    .    .  
+-- line 898 ----------------------------------------
+-- line 954 ----------------------------------------
+     .    .    .      .    .    .     .    .    .        {
+     .    .    .      .    .    .     .    .    .  	if (this->_M_impl._M_finish._M_p != this->_M_impl._M_end_addr())
+     .    .    .      .    .    .     .    .    .  	  *this->_M_impl._M_finish++ = __x;
+     .    .    .      .    .    .     .    .    .  	else
+     .    .    .      .    .    .     .    .    .  	  _M_insert_aux(end(), __x);
+     .    .    .      .    .    .     .    .    .        }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        void
+     6    2    1      0    0    0     4    0    0        swap(vector& __x) _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .        {
+     5    0    0      2    0    0     1    0    0  	std::swap(this->_M_impl._M_start, __x._M_impl._M_start);
+     7    0    0      2    0    0     1    0    0  	std::swap(this->_M_impl._M_finish, __x._M_impl._M_finish);
+     5    1    0      1    0    0     1    0    0  	std::swap(this->_M_impl._M_end_of_storage,
+     2    0    0      1    0    0     0    0    0  		  __x._M_impl._M_end_of_storage);
+    10    0    0      2    0    0     3    0    0  	_Bit_alloc_traits::_S_on_swap(_M_get_Bit_allocator(),
+     .    .    .      .    .    .     .    .    .  				      __x._M_get_Bit_allocator());
+     5    0    0      3    0    0     0    0    0        }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        // [23.2.5]/1, third-to-last entry in synopsis listing
+     .    .    .      .    .    .     .    .    .        static void
+     .    .    .      .    .    .     .    .    .        swap(reference __x, reference __y) _GLIBCXX_NOEXCEPT
+     .    .    .      .    .    .     .    .    .        {
+     .    .    .      .    .    .     .    .    .  	bool __tmp = __x;
+     .    .    .      .    .    .     .    .    .  	__x = __y;
+     .    .    .      .    .    .     .    .    .  	__y = __tmp;
+-- line 978 ----------------------------------------
+-- line 1112 ----------------------------------------
+     .    .    .      .    .    .     .    .    .  		      iterator __result)
+     .    .    .      .    .    .     .    .    .        {
+     .    .    .      .    .    .     .    .    .  	_Bit_type* __q = std::copy(__first._M_p, __last._M_p, __result._M_p);
+     .    .    .      .    .    .     .    .    .  	return std::copy(const_iterator(__last._M_p, 0), __last,
+     .    .    .      .    .    .     .    .    .  			 iterator(__q, 0));
+     .    .    .      .    .    .     .    .    .        }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        void
+     5    1    1      0    0    0     3    0    0        _M_initialize(size_type __n)
+     .    .    .      .    .    .     .    .    .        {
+     2    0    0      1    0    0     0    0    0  	if (__n)
+     .    .    .      .    .    .     .    .    .  	  {
+     6    0    0      2    0    0     2    0    0  	    _Bit_pointer __q = this->_M_allocate(__n);
+     8    1    1      3    0    0     2    0    0  	    this->_M_impl._M_end_of_storage = __q + _S_nword(__n);
+    15    1    1      4    0    0     4    0    0  	    this->_M_impl._M_start = iterator(std::__addressof(*__q), 0);
+     .    .    .      .    .    .     .    .    .  	  }
+     .    .    .      .    .    .     .    .    .  	else
+     .    .    .      .    .    .     .    .    .  	  {
+     .    .    .      .    .    .     .    .    .  	    this->_M_impl._M_end_of_storage = _Bit_pointer();
+     .    .    .      .    .    .     .    .    .  	    this->_M_impl._M_start = iterator(0, 0);
+     .    .    .      .    .    .     .    .    .  	  }
+    12    1    1      5    0    0     5    0    0  	this->_M_impl._M_finish = this->_M_impl._M_start + difference_type(__n);
+     .    .    .      .    .    .     .    .    .  
+     3    0    0      2    0    0     0    0    0        }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        void
+     6    0    0      0    0    0     3    0    0        _M_initialize_value(bool __x)
+     .    .    .      .    .    .     .    .    .        {
+     5    1    1      3    0    0     1    0    0  	if (_Bit_type* __p = this->_M_impl._M_start._M_p)
+     8    0    0      2    0    0     1    0    0  	  __builtin_memset(__p, __x ? ~0 : 0,
+     4    0    0      2    0    0     1    0    0  			   (this->_M_impl._M_end_addr() - __p)
+     .    .    .      .    .    .     .    .    .  			   * sizeof(_Bit_type));
+     3    1    1      2    0    0     0    0    0        }
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .        void
+     .    .    .      .    .    .     .    .    .        _M_reallocate(size_type __n);
+     .    .    .      .    .    .     .    .    .  
+     .    .    .      .    .    .     .    .    .  #if __cplusplus >= 201103L
+     .    .    .      .    .    .     .    .    .        bool
+     .    .    .      .    .    .     .    .    .        _M_shrink_to_fit();
+     .    .    .      .    .    .     .    .    .  #endif
+-- line 1152 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /home/live/Downloads/spack/opt/spack/linux-slackware14-westmere/gcc-9.2.0/eigen-3.3.7-nyiemy74pmb6b6dkk7vggl4romsdagc6/include/eigen3/Eigen/src/Core/PlainObjectBase.h
+--------------------------------------------------------------------------------
+Ir     I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 36 ----------------------------------------
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  template<> struct check_rows_cols_for_overflow<Dynamic> {
+     .    .    .     .    .    .     .    .    .    template<typename Index>
+     .    .    .     .    .    .     .    .    .    EIGEN_DEVICE_FUNC
+     .    .    .     .    .    .     .    .    .    static EIGEN_ALWAYS_INLINE void run(Index rows, Index cols)
+     .    .    .     .    .    .     .    .    .    {
+     .    .    .     .    .    .     .    .    .      // http://hg.mozilla.org/mozilla-central/file/6c8a909977d3/xpcom/ds/CheckedInt.h#l242
+     .    .    .     .    .    .     .    .    .      // we assume Index is signed
+     2    0    0     0    0    0     1    0    0      Index max_index = (std::size_t(1) << (8 * sizeof(Index) - 1)) - 1; // assume Index is signed
+     8    1    1     3    0    0     1    0    0      bool error = (rows == 0 || cols == 0) ? false
+     3    0    0     2    0    0     0    0    0                 : (rows > max_index / cols);
+     2    0    0     1    0    0     0    0    0      if (error)
+     .    .    .     .    .    .     .    .    .        throw_std_bad_alloc();
+     1    0    0     0    0    0     0    0    0    }
+     .    .    .     .    .    .     .    .    .  };
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  template <typename Derived,
+     .    .    .     .    .    .     .    .    .            typename OtherDerived = Derived,
+     .    .    .     .    .    .     .    .    .            bool IsVector = bool(Derived::IsVectorAtCompileTime) && bool(OtherDerived::IsVectorAtCompileTime)>
+     .    .    .     .    .    .     .    .    .  struct conservative_resize_like_impl;
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  template<typename MatrixTypeA, typename MatrixTypeB, bool SwapPointers> struct matrix_swap_impl;
+-- line 57 ----------------------------------------
+-- line 90 ----------------------------------------
+     .    .    .     .    .    .     .    .    .    * \tparam Derived is the derived type, e.g., a Matrix or Array
+     .    .    .     .    .    .     .    .    .    *
+     .    .    .     .    .    .     .    .    .    * \sa \ref TopicClassHierarchy
+     .    .    .     .    .    .     .    .    .    */
+     .    .    .     .    .    .     .    .    .  template<typename Derived>
+     .    .    .     .    .    .     .    .    .  class PlainObjectBase : public doxygen::dense_xpr_base_dispatcher<Derived>
+     .    .    .     .    .    .     .    .    .  #else
+     .    .    .     .    .    .     .    .    .  template<typename Derived>
+    10    0    0     3    0    0     3    0    0  class PlainObjectBase : public internal::dense_xpr_base<Derived>::type
+     .    .    .     .    .    .     .    .    .  #endif
+     .    .    .     .    .    .     .    .    .  {
+     .    .    .     .    .    .     .    .    .    public:
+     .    .    .     .    .    .     .    .    .      enum { Options = internal::traits<Derived>::Options };
+     .    .    .     .    .    .     .    .    .      typedef typename internal::dense_xpr_base<Derived>::type Base;
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      typedef typename internal::traits<Derived>::StorageKind StorageKind;
+     .    .    .     .    .    .     .    .    .      typedef typename internal::traits<Derived>::Scalar Scalar;
+-- line 106 ----------------------------------------
+-- line 143 ----------------------------------------
+     .    .    .     .    .    .     .    .    .      EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(NeedsToAlign)
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+     .    .    .     .    .    .     .    .    .      Base& base() { return *static_cast<Base*>(this); }
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+     .    .    .     .    .    .     .    .    .      const Base& base() const { return *static_cast<const Base*>(this); }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+20,043    1    1 6,681    0    0 6,681    0    0      EIGEN_STRONG_INLINE Index rows() const { return m_storage.rows(); }
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+25,290    2    2 8,430    0    0 8,430    0    0      EIGEN_STRONG_INLINE Index cols() const { return m_storage.cols(); }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      /** This is an overloaded version of DenseCoeffsBase<Derived,ReadOnlyAccessors>::coeff(Index,Index) const
+     .    .    .     .    .    .     .    .    .        * provided to by-pass the creation of an evaluator of the expression, thus saving compilation efforts.
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * See DenseCoeffsBase<Derived,ReadOnlyAccessors>::coeff(Index) const for details. */
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+ 5,600    1    1     0    0    0 4,000    0    0      EIGEN_STRONG_INLINE const Scalar& coeff(Index rowId, Index colId) const
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .        if(Flags & RowMajorBit)
+     .    .    .     .    .    .     .    .    .          return m_storage.data()[colId + rowId * m_storage.cols()];
+     .    .    .     .    .    .     .    .    .        else // column-major
+10,400    1    1 3,200    0    0 1,600    0    0          return m_storage.data()[rowId + colId * m_storage.rows()];
+ 3,200    0    0 2,400    0    0     0    0    0      }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      /** This is an overloaded version of DenseCoeffsBase<Derived,ReadOnlyAccessors>::coeff(Index) const
+     .    .    .     .    .    .     .    .    .        * provided to by-pass the creation of an evaluator of the expression, thus saving compilation efforts.
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * See DenseCoeffsBase<Derived,ReadOnlyAccessors>::coeff(Index) const for details. */
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+     .    .    .     .    .    .     .    .    .      EIGEN_STRONG_INLINE const Scalar& coeff(Index index) const
+     .    .    .     .    .    .     .    .    .      {
+-- line 174 ----------------------------------------
+-- line 247 ----------------------------------------
+     .    .    .     .    .    .     .    .    .      /** \internal */
+     .    .    .     .    .    .     .    .    .      template<int StoreMode>
+     .    .    .     .    .    .     .    .    .      EIGEN_STRONG_INLINE void writePacket(Index index, const PacketScalar& val)
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .        internal::pstoret<Scalar, PacketScalar, StoreMode>(m_storage.data() + index, val);
+     .    .    .     .    .    .     .    .    .      }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      /** \returns a const pointer to the data array of this matrix */
+ 1,384    1    1     0    0    0   692    0    0      EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE const Scalar *data() const
+ 1,730    0    0 1,038    0    0   346    0    0      { return m_storage.data(); }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      /** \returns a pointer to the data array of this matrix */
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Scalar *data()
+     .    .    .     .    .    .     .    .    .      { return m_storage.data(); }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      /** Resizes \c *this to a \a rows x \a cols matrix.
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * This method is intended for dynamic-size matrices, although it is legal to call it on any
+-- line 264 ----------------------------------------
+-- line 271 ----------------------------------------
+     .    .    .     .    .    .     .    .    .        * shrinking, the data is reallocated and all previous values are lost.
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * Example: \include Matrix_resize_int_int.cpp
+     .    .    .     .    .    .     .    .    .        * Output: \verbinclude Matrix_resize_int_int.out
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * \sa resize(Index) for vectors, resize(NoChange_t, Index), resize(Index, NoChange_t)
+     .    .    .     .    .    .     .    .    .        */
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+     6    0    0     0    0    0     4    0    0      EIGEN_STRONG_INLINE void resize(Index rows, Index cols)
+     .    .    .     .    .    .     .    .    .      {
+     8    1    1     4    0    0     2    0    0        eigen_assert(   EIGEN_IMPLIES(RowsAtCompileTime!=Dynamic,rows==RowsAtCompileTime)
+     .    .    .     .    .    .     .    .    .                     && EIGEN_IMPLIES(ColsAtCompileTime!=Dynamic,cols==ColsAtCompileTime)
+     .    .    .     .    .    .     .    .    .                     && EIGEN_IMPLIES(RowsAtCompileTime==Dynamic && MaxRowsAtCompileTime!=Dynamic,rows<=MaxRowsAtCompileTime)
+     .    .    .     .    .    .     .    .    .                     && EIGEN_IMPLIES(ColsAtCompileTime==Dynamic && MaxColsAtCompileTime!=Dynamic,cols<=MaxColsAtCompileTime)
+     .    .    .     .    .    .     .    .    .                     && rows>=0 && cols>=0 && "Invalid sizes when resizing a matrix or array.");
+     .    .    .     .    .    .     .    .    .        internal::check_rows_cols_for_overflow<MaxSizeAtCompileTime>::run(rows, cols);
+     .    .    .     .    .    .     .    .    .        #ifdef EIGEN_INITIALIZE_COEFFS
+     .    .    .     .    .    .     .    .    .          Index size = rows*cols;
+     .    .    .     .    .    .     .    .    .          bool size_changed = size != this->size();
+     .    .    .     .    .    .     .    .    .          m_storage.resize(size, rows, cols);
+     .    .    .     .    .    .     .    .    .          if(size_changed) EIGEN_INITIALIZE_COEFFS_IF_THAT_OPTION_IS_ENABLED
+     .    .    .     .    .    .     .    .    .        #else
+     8    0    0     5    0    0     1    0    0          m_storage.resize(rows*cols, rows, cols);
+     .    .    .     .    .    .     .    .    .        #endif
+     3    0    0     2    0    0     0    0    0      }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      /** Resizes \c *this to a vector of length \a size
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * \only_for_vectors. This method does not work for
+     .    .    .     .    .    .     .    .    .        * partially dynamic matrices when the static dimension is anything other
+     .    .    .     .    .    .     .    .    .        * than 1. For example it will not work with Matrix<double, 2, Dynamic>.
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * Example: \include Matrix_resize_int.cpp
+-- line 303 ----------------------------------------
+-- line 476 ----------------------------------------
+     .    .    .     .    .    .     .    .    .        return Base::operator=(func);
+     .    .    .     .    .    .     .    .    .      }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      // Prevent user from trying to instantiate PlainObjectBase objects
+     .    .    .     .    .    .     .    .    .      // by making all its constructor protected. See bug 1074.
+     .    .    .     .    .    .     .    .    .    protected:
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+    10    1    1     2    0    0     4    0    0      EIGEN_STRONG_INLINE PlainObjectBase() : m_storage()
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .  //       _check_template_params();
+     .    .    .     .    .    .     .    .    .  //       EIGEN_INITIALIZE_COEFFS_IF_THAT_OPTION_IS_ENABLED
+     3    0    0     2    0    0     0    0    0      }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  #ifndef EIGEN_PARSED_BY_DOXYGEN
+     .    .    .     .    .    .     .    .    .      // FIXME is it still needed ?
+     .    .    .     .    .    .     .    .    .      /** \internal */
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+     .    .    .     .    .    .     .    .    .      explicit PlainObjectBase(internal::constructor_without_unaligned_array_assert)
+     .    .    .     .    .    .     .    .    .        : m_storage(internal::constructor_without_unaligned_array_assert())
+     .    .    .     .    .    .     .    .    .      {
+-- line 496 ----------------------------------------
+-- line 704 ----------------------------------------
+     .    .    .     .    .    .     .    .    .        * \sa operator=(const MatrixBase<OtherDerived>&), _set_noalias()
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * \internal
+     .    .    .     .    .    .     .    .    .        */
+     .    .    .     .    .    .     .    .    .      // aliasing is dealt once in internall::call_assignment
+     .    .    .     .    .    .     .    .    .      // so at this stage we have to assume aliasing... and resising has to be done later.
+     .    .    .     .    .    .     .    .    .      template<typename OtherDerived>
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC 
+     6    0    0     0    0    0     4    0    0      EIGEN_STRONG_INLINE Derived& _set(const DenseBase<OtherDerived>& other)
+     .    .    .     .    .    .     .    .    .      {
+    10    1    1     2    0    0     3    0    0        internal::call_assignment(this->derived(), other.derived());
+     3    0    0     1    0    0     1    0    0        return this->derived();
+     4    0    0     3    0    0     0    0    0      }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      /** \internal Like _set() but additionally makes the assumption that no aliasing effect can happen (which
+     .    .    .     .    .    .     .    .    .        * is the case when creating a new matrix) so one can enforce lazy evaluation.
+     .    .    .     .    .    .     .    .    .        *
+     .    .    .     .    .    .     .    .    .        * \sa operator=(const MatrixBase<OtherDerived>&), _set()
+     .    .    .     .    .    .     .    .    .        */
+     .    .    .     .    .    .     .    .    .      template<typename OtherDerived>
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC 
+-- line 724 ----------------------------------------
+-- line 730 ----------------------------------------
+     .    .    .     .    .    .     .    .    .        // the 'false' below means to enforce lazy evaluation. We don't use lazyAssign() because
+     .    .    .     .    .    .     .    .    .        // it wouldn't allow to copy a row-vector into a column-vector.
+     .    .    .     .    .    .     .    .    .        internal::call_assignment_no_alias(this->derived(), other.derived(), internal::assign_op<Scalar,typename OtherDerived::Scalar>());
+     .    .    .     .    .    .     .    .    .        return this->derived();
+     .    .    .     .    .    .     .    .    .      }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      template<typename T0, typename T1>
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+     7    0    0     0    0    0     5    0    0      EIGEN_STRONG_INLINE void _init2(Index rows, Index cols, typename internal::enable_if<Base::SizeAtCompileTime!=2,T0>::type* = 0)
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .        EIGEN_STATIC_ASSERT(bool(NumTraits<T0>::IsInteger) &&
+     .    .    .     .    .    .     .    .    .                            bool(NumTraits<T1>::IsInteger),
+     .    .    .     .    .    .     .    .    .                            FLOATING_POINT_ARGUMENT_PASSED__INTEGER_WAS_EXPECTED)
+     6    0    0     3    0    0     1    0    0        resize(rows,cols);
+     3    0    0     2    0    0     0    0    0      }
+     .    .    .     .    .    .     .    .    .      
+     .    .    .     .    .    .     .    .    .      template<typename T0, typename T1>
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC 
+     .    .    .     .    .    .     .    .    .      EIGEN_STRONG_INLINE void _init2(const T0& val0, const T1& val1, typename internal::enable_if<Base::SizeAtCompileTime==2,T0>::type* = 0)
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .        EIGEN_STATIC_ASSERT_VECTOR_SPECIFIC_SIZE(PlainObjectBase, 2)
+     .    .    .     .    .    .     .    .    .        m_storage.data()[0] = Scalar(val0);
+     .    .    .     .    .    .     .    .    .        m_storage.data()[1] = Scalar(val1);
+-- line 752 ----------------------------------------
+-- line 893 ----------------------------------------
+     .    .    .     .    .    .     .    .    .        * \brief const version forwarded to DenseBase::swap
+     .    .    .     .    .    .     .    .    .        */
+     .    .    .     .    .    .     .    .    .      template<typename OtherDerived>
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC
+     .    .    .     .    .    .     .    .    .      void swap(DenseBase<OtherDerived> const & other)
+     .    .    .     .    .    .     .    .    .      { Base::swap(other.derived()); }
+     .    .    .     .    .    .     .    .    .      
+     .    .    .     .    .    .     .    .    .      EIGEN_DEVICE_FUNC 
+     2    1    1     0    0    0     1    0    0      static EIGEN_STRONG_INLINE void _check_template_params()
+     .    .    .     .    .    .     .    .    .      {
+     .    .    .     .    .    .     .    .    .        EIGEN_STATIC_ASSERT((EIGEN_IMPLIES(MaxRowsAtCompileTime==1 && MaxColsAtCompileTime!=1, (Options&RowMajor)==RowMajor)
+     .    .    .     .    .    .     .    .    .                          && EIGEN_IMPLIES(MaxColsAtCompileTime==1 && MaxRowsAtCompileTime!=1, (Options&RowMajor)==0)
+     .    .    .     .    .    .     .    .    .                          && ((RowsAtCompileTime == Dynamic) || (RowsAtCompileTime >= 0))
+     .    .    .     .    .    .     .    .    .                          && ((ColsAtCompileTime == Dynamic) || (ColsAtCompileTime >= 0))
+     .    .    .     .    .    .     .    .    .                          && ((MaxRowsAtCompileTime == Dynamic) || (MaxRowsAtCompileTime >= 0))
+     .    .    .     .    .    .     .    .    .                          && ((MaxColsAtCompileTime == Dynamic) || (MaxColsAtCompileTime >= 0))
+     .    .    .     .    .    .     .    .    .                          && (MaxRowsAtCompileTime == RowsAtCompileTime || RowsAtCompileTime==Dynamic)
+     .    .    .     .    .    .     .    .    .                          && (MaxColsAtCompileTime == ColsAtCompileTime || ColsAtCompileTime==Dynamic)
+     .    .    .     .    .    .     .    .    .                          && (Options & (DontAlign|RowMajor)) == Options),
+     .    .    .     .    .    .     .    .    .          INVALID_MATRIX_TEMPLATE_PARAMETERS)
+     3    0    0     2    0    0     0    0    0      }
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .      enum { IsPlainObjectBase = 1 };
+     .    .    .     .    .    .     .    .    .  #endif
+     .    .    .     .    .    .     .    .    .  };
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  namespace internal {
+     .    .    .     .    .    .     .    .    .  
+     .    .    .     .    .    .     .    .    .  template <typename Derived, typename OtherDerived, bool IsVector>
+-- line 921 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/9.2.0/bits/random.tcc
+--------------------------------------------------------------------------------
+Ir    I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 317 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  			    __s, __b, __t, __c, __l, __f>::default_seed;
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template<typename _UIntType,
+    .    .    .     .    .    .     .    .    .  	   size_t __w, size_t __n, size_t __m, size_t __r,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __a, size_t __u, _UIntType __d, size_t __s,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __b, size_t __t, _UIntType __c, size_t __l,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __f>
+    .    .    .     .    .    .     .    .    .      void
+    5    1    1     0    0    0     3    0    0      mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d,
+    .    .    .     .    .    .     .    .    .  			    __s, __b, __t, __c, __l, __f>::
+    .    .    .     .    .    .     .    .    .      seed(result_type __sd)
+    .    .    .     .    .    .     .    .    .      {
+    2    0    0     1    0    0     1    1    1        _M_x[0] = __detail::__mod<_UIntType,
+    3    1    1     1    0    0     1    0    0  	__detail::_Shift<_UIntType, __w>::__value>(__sd);
+    .    .    .     .    .    .     .    .    .  
+2,495    0    0 1,247    0    0     1    0    0        for (size_t __i = 1; __i < state_size; ++__i)
+    .    .    .     .    .    .     .    .    .  	{
+3,115    0    0 1,869    0    0   623    0    0  	  _UIntType __x = _M_x[__i - 1];
+1,869    0    0 1,246    0    0     0    0    0  	  __x ^= __x >> (__w - 2);
+1,869    1    1   623    0    0   623    0    0  	  __x *= __f;
+2,492    0    0 1,246    0    0   623    0    0  	  __x += __detail::__mod<_UIntType, __n>(__i);
+1,869    0    0 1,246    0    0   623   53    5  	  _M_x[__i] = __detail::__mod<_UIntType,
+1,869    0    0   623    0    0   623    0    0  	    __detail::_Shift<_UIntType, __w>::__value>(__x);
+    .    .    .     .    .    .     .    .    .  	}
+    2    1    1     1    0    0     1    0    0        _M_p = state_size;
+    3    0    0     2    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template<typename _UIntType,
+    .    .    .     .    .    .     .    .    .  	   size_t __w, size_t __n, size_t __m, size_t __r,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __a, size_t __u, _UIntType __d, size_t __s,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __b, size_t __t, _UIntType __c, size_t __l,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __f>
+    .    .    .     .    .    .     .    .    .      template<typename _Sseq>
+    .    .    .     .    .    .     .    .    .        auto
+-- line 350 ----------------------------------------
+-- line 388 ----------------------------------------
+    .    .    .     .    .    .     .    .    .        }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template<typename _UIntType, size_t __w,
+    .    .    .     .    .    .     .    .    .  	   size_t __n, size_t __m, size_t __r,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __a, size_t __u, _UIntType __d, size_t __s,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __b, size_t __t, _UIntType __c, size_t __l,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __f>
+    .    .    .     .    .    .     .    .    .      void
+    3    0    0     0    0    0     2    0    0      mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d,
+    .    .    .     .    .    .     .    .    .  			    __s, __b, __t, __c, __l, __f>::
+    .    .    .     .    .    .     .    .    .      _M_gen_rand(void)
+    .    .    .     .    .    .     .    .    .      {
+    1    0    0     0    0    0     1    0    0        const _UIntType __upper_mask = (~_UIntType()) << __r;
+    1    0    0     0    0    0     1    0    0        const _UIntType __lower_mask = ~__upper_mask;
+    .    .    .     .    .    .     .    .    .  
+  911    1    1   455    0    0     1    0    0        for (size_t __k = 0; __k < (__n - __m); ++__k)
+    .    .    .     .    .    .     .    .    .          {
+1,589    0    0   681    0    0   227    0    0  	  _UIntType __y = ((_M_x[__k] & __upper_mask)
+1,135    0    0   681    0    0     0    0    0  			   | (_M_x[__k + 1] & __lower_mask));
+2,270    2    2 1,362    0    0   227    0    0  	  _M_x[__k] = (_M_x[__k + __m] ^ (__y >> 1)
+1,717    0    0   227    0    0     0    0    0  		       ^ ((__y & 0x01) ? __a : 0));
+    .    .    .     .    .    .     .    .    .          }
+    .    .    .     .    .    .     .    .    .  
+1,587    0    0   793    0    0     1    0    0        for (size_t __k = (__n - __m); __k < (__n - 1); ++__k)
+    .    .    .     .    .    .     .    .    .  	{
+2,772    0    0 1,188    0    0   396    0    0  	  _UIntType __y = ((_M_x[__k] & __upper_mask)
+1,980    1    1 1,188    0    0     0    0    0  			   | (_M_x[__k + 1] & __lower_mask));
+3,960    0    0 2,376    0    0   396    0    0  	  _M_x[__k] = (_M_x[__k + (__m - __n)] ^ (__y >> 1)
+2,983    1    1   396    0    0     0    0    0  		       ^ ((__y & 0x01) ? __a : 0));
+    .    .    .     .    .    .     .    .    .  	}
+    .    .    .     .    .    .     .    .    .  
+    6    0    0     2    0    0     1    0    0        _UIntType __y = ((_M_x[__n - 1] & __upper_mask)
+    3    1    1     2    0    0     0    0    0  		       | (_M_x[0] & __lower_mask));
+    7    0    0     4    0    0     1    0    0        _M_x[__n - 1] = (_M_x[__m - 1] ^ (__y >> 1)
+    6    0    0     1    0    0     0    0    0  		       ^ ((__y & 0x01) ? __a : 0));
+    2    0    0     1    0    0     1    0    0        _M_p = 0;
+    3    0    0     2    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template<typename _UIntType, size_t __w,
+    .    .    .     .    .    .     .    .    .  	   size_t __n, size_t __m, size_t __r,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __a, size_t __u, _UIntType __d, size_t __s,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __b, size_t __t, _UIntType __c, size_t __l,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __f>
+    .    .    .     .    .    .     .    .    .      void
+    .    .    .     .    .    .     .    .    .      mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d,
+-- line 432 ----------------------------------------
+-- line 444 ----------------------------------------
+    .    .    .     .    .    .     .    .    .    template<typename _UIntType, size_t __w,
+    .    .    .     .    .    .     .    .    .  	   size_t __n, size_t __m, size_t __r,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __a, size_t __u, _UIntType __d, size_t __s,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __b, size_t __t, _UIntType __c, size_t __l,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __f>
+    .    .    .     .    .    .     .    .    .      typename
+    .    .    .     .    .    .     .    .    .      mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d,
+    .    .    .     .    .    .     .    .    .  			    __s, __b, __t, __c, __l, __f>::result_type
+1,600    0    0     0    0    0   800    0    0      mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d,
+    .    .    .     .    .    .     .    .    .  			    __s, __b, __t, __c, __l, __f>::
+    .    .    .     .    .    .     .    .    .      operator()()
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        // Reload the vector - cost is O(n) amortized over n calls.
+1,600    1    1   800    0    0     0    0    0        if (_M_p >= state_size)
+    3    0    0     1    0    0     1    0    0  	_M_gen_rand();
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .        // Calculate o(x(i)).
+3,200    0    0 2,000    0    0   800    0    0        result_type __z = _M_x[_M_p++];
+1,600    0    0   800    0    0     0    0    0        __z ^= (__z >> __u) & __d;
+1,600    0    0   800    0    0     0    0    0        __z ^= (__z << __s) & __b;
+1,600    0    0   800    0    0     0    0    0        __z ^= (__z << __t) & __c;
+1,200    0    0   800    0    0     0    0    0        __z ^= (__z >> __l);
+    .    .    .     .    .    .     .    .    .  
+  400    0    0   400    0    0     0    0    0        return __z;
+  800    0    0   800    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template<typename _UIntType, size_t __w,
+    .    .    .     .    .    .     .    .    .  	   size_t __n, size_t __m, size_t __r,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __a, size_t __u, _UIntType __d, size_t __s,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __b, size_t __t, _UIntType __c, size_t __l,
+    .    .    .     .    .    .     .    .    .  	   _UIntType __f, typename _CharT, typename _Traits>
+    .    .    .     .    .    .     .    .    .      std::basic_ostream<_CharT, _Traits>&
+    .    .    .     .    .    .     .    .    .      operator<<(std::basic_ostream<_CharT, _Traits>& __os,
+-- line 476 ----------------------------------------
+-- line 3310 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  	  __begin[(__k + __q) % __n] ^= __r4;
+    .    .    .     .    .    .     .    .    .  	  __begin[__k % __n] = __r4;
+    .    .    .     .    .    .     .    .    .  	}
+    .    .    .     .    .    .     .    .    .      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    template<typename _RealType, size_t __bits,
+    .    .    .     .    .    .     .    .    .  	   typename _UniformRandomNumberGenerator>
+    .    .    .     .    .    .     .    .    .      _RealType
+2,000    1    1     0    0    0 1,200    0    0      generate_canonical(_UniformRandomNumberGenerator& __urng)
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        static_assert(std::is_floating_point<_RealType>::value,
+    .    .    .     .    .    .     .    .    .  		    "template argument must be a floating point type");
+    .    .    .     .    .    .     .    .    .  
+  400    0    0     0    0    0   400    0    0        const size_t __b
+    .    .    .     .    .    .     .    .    .  	= std::min(static_cast<size_t>(std::numeric_limits<_RealType>::digits),
+    .    .    .     .    .    .     .    .    .                     __bits);
+  800    0    0   400    0    0   400    0    0        const long double __r = static_cast<long double>(__urng.max())
+    .    .    .     .    .    .     .    .    .  			    - static_cast<long double>(__urng.min()) + 1.0L;
+  400    0    0     0    0    0   400    0    0        const size_t __log2r = std::log(__r) / std::log(2.0L);
+  400    0    0     0    0    0   400    0    0        const size_t __m = std::max<size_t>(1UL,
+    .    .    .     .    .    .     .    .    .  					  (__b + __log2r - 1UL) / __log2r);
+    .    .    .     .    .    .     .    .    .        _RealType __ret;
+  800    0    0     0    0    0   400    0    0        _RealType __sum = _RealType(0);
+  800    1    1   400    0    0   400    0    0        _RealType __tmp = _RealType(1);
+2,800    0    0 1,200    0    0   400    0    0        for (size_t __k = __m; __k != 0; --__k)
+    .    .    .     .    .    .     .    .    .  	{
+6,000    1    1 1,200    0    0 1,200    0    0  	  __sum += _RealType(__urng() - __urng.min()) * __tmp;
+1,600    0    0   800    0    0   400    0    0  	  __tmp *= __r;
+    .    .    .     .    .    .     .    .    .  	}
+1,200    1    1   800    0    0   400    0    0        __ret = __sum / __tmp;
+2,800    0    0   800    0    0     0    0    0        if (__builtin_expect(__ret >= _RealType(1), 0))
+    .    .    .     .    .    .     .    .    .  	{
+    .    .    .     .    .    .     .    .    .  #if _GLIBCXX_USE_C99_MATH_TR1
+    .    .    .     .    .    .     .    .    .  	  __ret = std::nextafter(_RealType(1), _RealType(0));
+    .    .    .     .    .    .     .    .    .  #else
+    .    .    .     .    .    .     .    .    .  	  __ret = _RealType(1)
+    .    .    .     .    .    .     .    .    .  	    - std::numeric_limits<_RealType>::epsilon() / _RealType(2);
+    .    .    .     .    .    .     .    .    .  #endif
+    .    .    .     .    .    .     .    .    .  	}
+  400    0    0   400    0    0     0    0    0        return __ret;
+1,600    0    0 1,200    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  _GLIBCXX_END_NAMESPACE_VERSION
+    .    .    .     .    .    .     .    .    .  } // namespace
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .  #endif
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/9.2.0/bits/stl_algobase.h
+--------------------------------------------------------------------------------
+Ir    I1mr ILmr Dr    D1mr DLmr Dw    D1mw DLmw 
+
+-- line 190 ----------------------------------------
+    .    .    .     .    .    .     .    .    .     *
+    .    .    .     .    .    .     .    .    .     *  This is the simple classic generic implementation.  It will work on
+    .    .    .     .    .    .     .    .    .     *  temporary expressions, since they are only evaluated once, unlike a
+    .    .    .     .    .    .     .    .    .     *  preprocessor macro.
+    .    .    .     .    .    .     .    .    .    */
+    .    .    .     .    .    .     .    .    .    template<typename _Tp>
+    .    .    .     .    .    .     .    .    .      _GLIBCXX14_CONSTEXPR
+    .    .    .     .    .    .     .    .    .      inline const _Tp&
+   56    0    0     0    0    0    42    0    0      min(const _Tp& __a, const _Tp& __b)
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        // concept requirements
+    .    .    .     .    .    .     .    .    .        __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+    .    .    .     .    .    .     .    .    .        //return __b < __a ? __b : __a;
+   84    0    0    56    0    0     0    0    0        if (__b < __a)
+    .    .    .     .    .    .     .    .    .  	return __b;
+   14    0    0    14    0    0     0    0    0        return __a;
+   28    0    0    28    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    /**
+    .    .    .     .    .    .     .    .    .     *  @brief This does what you think it does.
+    .    .    .     .    .    .     .    .    .     *  @ingroup sorting_algorithms
+    .    .    .     .    .    .     .    .    .     *  @param  __a  A thing of arbitrary type.
+    .    .    .     .    .    .     .    .    .     *  @param  __b  Another thing of arbitrary type.
+    .    .    .     .    .    .     .    .    .     *  @return   The greater of the parameters.
+    .    .    .     .    .    .     .    .    .     *
+    .    .    .     .    .    .     .    .    .     *  This is the simple classic generic implementation.  It will work on
+    .    .    .     .    .    .     .    .    .     *  temporary expressions, since they are only evaluated once, unlike a
+    .    .    .     .    .    .     .    .    .     *  preprocessor macro.
+    .    .    .     .    .    .     .    .    .    */
+    .    .    .     .    .    .     .    .    .    template<typename _Tp>
+    .    .    .     .    .    .     .    .    .      _GLIBCXX14_CONSTEXPR
+    .    .    .     .    .    .     .    .    .      inline const _Tp&
+1,628    0    0     0    0    0 1,221    0    0      max(const _Tp& __a, const _Tp& __b)
+    .    .    .     .    .    .     .    .    .      {
+    .    .    .     .    .    .     .    .    .        // concept requirements
+    .    .    .     .    .    .     .    .    .        __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+    .    .    .     .    .    .     .    .    .        //return  __a < __b ? __b : __a;
+2,442    1    0 1,628    0    0     0    0    0        if (__a < __b)
+    6    0    0     3    0    0     0    0    0  	return __b;
+  404    0    0   404    0    0     0    0    0        return __a;
+  814    0    0   814    0    0     0    0    0      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    /**
+    .    .    .     .    .    .     .    .    .     *  @brief This does what you think it does.
+    .    .    .     .    .    .     .    .    .     *  @ingroup sorting_algorithms
+    .    .    .     .    .    .     .    .    .     *  @param  __a  A thing of arbitrary type.
+    .    .    .     .    .    .     .    .    .     *  @param  __b  Another thing of arbitrary type.
+    .    .    .     .    .    .     .    .    .     *  @param  __comp  A @link comparison_functors comparison functor@endlink.
+    .    .    .     .    .    .     .    .    .     *  @return   The lesser of the parameters.
+-- line 238 ----------------------------------------
+-- line 272 ----------------------------------------
+    .    .    .     .    .    .     .    .    .  	return __b;
+    .    .    .     .    .    .     .    .    .        return __a;
+    .    .    .     .    .    .     .    .    .      }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    // Fallback implementation of the function in bits/stl_iterator.h used to
+    .    .    .     .    .    .     .    .    .    // remove the __normal_iterator wrapper. See copy, fill, ...
+    .    .    .     .    .    .     .    .    .    template<typename _Iterator>
+    .    .    .     .    .    .     .    .    .      inline _Iterator
+  126    0    0     0    0    0    84    0    0      __niter_base(_Iterator __it)
+    .    .    .     .    .    .     .    .    .      _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
+  126    0    0   126    0    0     0    0    0      { return __it; }
+    .    .    .     .    .    .     .    .    .  
+    .    .    .     .    .    .     .    .    .    // Reverse the __niter_base transformation to get a
+    .    .    .     .    .    .     .    .    .    // __normal_iterator back again (this assumes that __normal_iterator
+    .    .    .     .    .    .     .    .    .    // is only used to wrap random access iterators, like pointers).
+    .    .    .     .    .    .     .    .    .    template<typename _From, typename _To>
+    .    .    .     .    .    .     .    .    .      inline _From
+    .    .    .     .    .    .     .    .    .      __niter_wrap(_From __from, _To __res)
+    .    .    .     .    .    .     .    .    .      { return __from + (__res - std::__niter_base(__from)); }
+-- line 290 ----------------------------------------
+
+--------------------------------------------------------------------------------
+Ir      I1mr ILmr Dr      D1mr DLmr Dw      D1mw DLmw 
+--------------------------------------------------------------------------------
+619,603  175  157 227,610   44    1 162,800   62    9  events annotated
+
