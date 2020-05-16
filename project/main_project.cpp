@@ -1,23 +1,48 @@
-//https://floobits.com/cfangelq/Proyecto_intermedio/file/random_m_4.cpp:22?new_workspace=1
 #include <iostream>
 #include <Eigen/Dense>
 #include <random>
 #include <vector>
+#include <fstream>
+#include <string>
+#include <gsl/gsl_statistics_double.h>
 #include "project.h"
+
+const int sample_size=20;
 
 int main(void)
 {
-  float number_of_perc=0; //variable para la cantidad de clusters percolantes en la muestra
   unsigned int N=20;
-  float prob=0.6;
-  float sum_l_cl=0; //variable para la sumatoria de los clusters
-  for (int seed=0; seed<N; seed++)
+  
+  float prob=0.0;
+  double * larg_cl= new double[sample_size] {0}; //array para los clusters percolantes mas grandes de cada matriz (normalizado)
+  double * percol_a= new double[sample_size] {0};//array para la percolacion de matrices
+  std::vector<statistics> stat_vect;
+  while (prob <= 1.0)
     {
-      cluster_series_generate(seed, N, number_of_perc, sum_l_cl, prob);
+      if (prob < 0.55){
+	  prob += 0.055;
+      }
+      if ((prob>=0.55) && (prob<=0.65)){
+	prob += 0.01;
+      }
+      if (prob>0.65){
+	prob += 0.035;
+	  }
+	
+      for (int seed=0; seed<sample_size; seed++)
+	{
+	  std::vector<cluster_attributes> cl_att_vect; //vector de atributos del cluster
+	  cluster_series_generate(seed, N, prob, cl_att_vect, percol_a);
+	  larg_cl[seed]= (largest_perc_cluster(cl_att_vect)/(N*N));
+	  std::vector<cluster_attributes>().swap(cl_att_vect);
+      
+	}
+      gen_stat(larg_cl, percol_a, sample_size, prob, stat_vect);
+            
     }
-  float perc_prob = number_of_perc/N;
-  float average = sum_l_cl/N;
-  std::cout<<"largest cluster avg. "<<average<<std::endl;
-  std::cout<<"perc prob "<<perc_prob<<std::endl;
+  print_stat(stat_vect, prob, N);
+ 
+  delete [] larg_cl;
+  delete [] percol_a;
   return 0;
 }

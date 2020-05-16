@@ -1,42 +1,82 @@
-//https://floobits.com/cfangelq/Proyecto_intermedio/file/random_m_4.cpp:22?new_workspace=1
 #include <iostream>
 #include <Eigen/Dense>
 #include <random>
 #include <vector>
+#include <fstream>
+#include <string>
+#include <gsl/gsl_statistics_double.h>
 #include "project.h"
 
-void cluster_series_generate (int seed, unsigned int N, float & number_of_perc, float & sum_l_cl, float prob)
+void gen_stat (double * larg_cl, double * percol_a, int sample_size, float prob , std::vector<statistics> & stat_vect)
+{
+  statistics stat;
+  stat.lcl_mean = gsl_stats_mean(larg_cl, 1, sample_size); //media del cluster mas grande
+  stat.lcl_dvi = gsl_stats_variance_m(larg_cl, 1, sample_size, stat.lcl_mean); //desviacion de los datos para el cluster mas grande
+  stat.perc_mean = gsl_stats_mean(percol_a, 1, sample_size); //prob para la percolacion
+  stat.perc_dvi = gsl_stats_variance_m(percol_a, 1, sample_size, stat.perc_dvi); //desv de la perc
+  stat.probab=prob;
+  stat_vect.push_back (stat); //añadido del ciclo de estadistica para una probabilidad al vector
+}
+void print_stat (std::vector<statistics> & stat_vect, float prob, unsigned int N){
+  std::string fname="stats_Nsize_" + std::to_string(N) +".txt";
+  std::ofstream fout(fname, std::ofstream::out);
+  fout.precision(15); fout.setf(std::ios::scientific);
+  fout << "Prob \t \t"<< "l_cl_mean \t \t" << "l_cl_dvi \t \t" << "perc_mean \n";
+  for (const auto statis : stat_vect)
+    fout<< statis.probab<< "\t \t"<< statis.lcl_mean << "\t \t" << statis.lcl_dvi <<"\t \t" <<statis.perc_mean<<"\t \t"<<statis.perc_dvi<<"\n";
+}
+
+void print_system (int seed, unsigned int N, float prob, const Eigen::MatrixXi & X, std::vector<cluster_attributes> & cl_att_vect)
+{
+  std::string fname="data_" + std::to_string(N) +"_" + std::to_string(prob) + "_" + std::to_string(seed) + ".txt";
+  std::ofstream fout(fname, std::ofstream::out);
+
+  fout<<X<<"\n \n"<< "id \t"<< "size \n";
+  
+  for (const auto cluster : cl_att_vect){
+    fout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<"\t"<<cluster.percolate<<"\n";
+  }
+  fout.close();
+}
+
+void cluster_series_generate (int seed, unsigned int N, float prob, std::vector<cluster_attributes> & cl_att_vect, double * percol_a )
 {
   Eigen::MatrixXi X (N,N);
   std::vector<bool> visited (X.size(), false); //generacion de un vector tamaño nxn tipo bool que se usa como check para el dfs
-  std::vector<cluster_attributes> cl_att_vect;
+
   percolate_tf perc; //declaracion de un struct auxiliar que indica si hubo percolacion
   randomly_fill_matrix (X, prob, seed, visited);
   dfs (X, visited, perc, cl_att_vect);
+  print_system (seed, N, prob, X, cl_att_vect);
+  /*
+  std::vector<cluster_attributes> cl_att_vect;
+  
   std::cout<< X <<"\n"<< std::endl;
-  std::cout<<"id \t"<< "size \t"<<std::endl;
+   std::cout<<"id \t"<< "size \t"<<std::endl;
       
   for (const auto cluster : cl_att_vect){
-    std::cout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<std::endl;
-  }
-      
+    std::cout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<"\t"<<cluster.percolate<<std::endl;
+    }
+  std::cout<<"percola:"<<perc.aux_perc<<std::endl;
+ */
+
   if (perc.aux_perc==true){
-    number_of_perc += 1;
+    percol_a[seed] = 1;
   }
         
-      std::cout<<"percola:"<<perc.aux_perc<<std::endl;
+ 
       std::vector<bool>().swap(visited); //forma sugerida por google para liberar la memoria de un vector
-      sum_l_cl += largest_cluster(cl_att_vect);
+     
 }
 
-double largest_cluster(std::vector<cluster_attributes>  cl_att_v)
+double largest_perc_cluster(std::vector<cluster_attributes> cl_att_v)
 {
-  float max=0;
+  double max=0;
   for (const auto cluster : cl_att_v)
     {
-      if(cluster.cluster_size > max)
+      if((cluster.cluster_size > max) && (cluster.percolate==1))
 	{
-	  max = (float)cluster.cluster_size;  
+	  max = (double)cluster.cluster_size;  
 	}
       else continue;
     }
@@ -69,6 +109,7 @@ void dfs (Eigen::MatrixXi & M, std::vector<bool> & visit, percolate_tf & perc, s
   cluster_attributes cl_att;
   perc.aux_perc = false; //inicializacion de las variables
   cl_att.cluster_id = 1;//declaracion del id para los cluster
+  
   for (int i=0; i<M.size(); i++)
     {
       
@@ -79,7 +120,7 @@ void dfs (Eigen::MatrixXi & M, std::vector<bool> & visit, percolate_tf & perc, s
 	  perc.aux_left = false;
 	  perc.aux_right = false;
 	  cl_att.cluster_size = 0;
-	  // inizaliacion del contador de tamaño
+	  cl_att.percolate = 0;  // inizaliacion del contador de tamaño
 	  cl_att.cluster_id+=1; //cambio del id del cluster
 	  int col_coef = i/M.cols(); //conversion de la posicion actual i a (n , m)
 	  int row_coef = i%M.rows();
@@ -121,7 +162,8 @@ void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int 
   }
   
   if ((perc.aux_left && perc.aux_right) || (perc.aux_top && perc.aux_bottom) == true) {
-      perc.aux_perc = true; //indica si se encontró un cluster percolante
+      perc.aux_perc = true; //global
+      cl_att.percolate = 1; //indica si se encontró un cluster percolante
     }
   
   visit[array_coef] = true; //escribe la casilla como visitada
