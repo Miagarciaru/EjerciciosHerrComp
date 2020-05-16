@@ -31,11 +31,14 @@ void print_system (int seed, unsigned int N, float prob, const Eigen::MatrixXi &
   std::string fname="data_" + std::to_string(N) +"_" + std::to_string(prob) + "_" + std::to_string(seed) + ".txt";
   std::ofstream fout(fname, std::ofstream::out);
 
-  fout<<X<<"\n \n"<< "id \t"<< "size \n";
+  fout<<X<<"\n";
   
+  // fout<<X<<"\n \n"<< "id \t"<< "size \n";
+  /*
   for (const auto cluster : cl_att_vect){
-    fout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<"\t"<<cluster.percolate<<"\n";
+     fout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<"\t"<<cluster.percolate<<"\n";
   }
+  */
   fout.close();
 }
 

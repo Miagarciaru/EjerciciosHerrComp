@@ -22,10 +22,10 @@ int main(void)
       if (prob < 0.55){
 	  prob += 0.055;
       }
-      if ((prob>=0.55) && (prob<=0.65)){
+      if ((prob>=0.55) && (prob<0.65)){
 	prob += 0.01;
       }
-      if (prob>0.65){
+      if ((prob>=0.65) && (prob<=1.0)){
 	prob += 0.035;
 	  }
 	
