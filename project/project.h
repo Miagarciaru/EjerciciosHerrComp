@@ -20,7 +20,7 @@ struct statistics{ //estructura para las estadisticas
 
 void randomly_fill_matrix (Eigen::MatrixXi & M, const float prob, const int seed, std::vector<bool> & visit);
 void dfs (Eigen::MatrixXi & M, std::vector<bool> & visit, percolate_tf & perc, std::vector<cluster_attributes> & cl_att_vect);
-void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int array_coef, percolate_tf & perc, cluster_attributes & cl_att);
+void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int array_coef, percolate_tf & perc, cluster_attributes & cl_att, std::vector<int> & dfs_buff);
 double largest_perc_cluster(std::vector<cluster_attributes>  cl_att_v);
 void cluster_series_generate (int seed, unsigned int N, float prob, std::vector<cluster_attributes> & cl_att_vect, double * percol_a);
 void print_system (int seed, unsigned int N, float prob, const Eigen::MatrixXi & X, std::vector<cluster_attributes> & cl_att_vect);

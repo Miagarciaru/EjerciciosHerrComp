@@ -15,8 +15,9 @@ void gen_stat (double * larg_cl, double * percol_a, int sample_size, float prob 
   stat.perc_mean = gsl_stats_mean(percol_a, 1, sample_size); //prob para la percolacion
   stat.perc_dvi = gsl_stats_variance_m(percol_a, 1, sample_size, stat.perc_dvi); //desv de la perc
   stat.probab=prob;
-  stat_vect.push_back (stat); //añadido del ciclo de estadistica para una probabilidad al vector
+  stat_vect.push_back (stat); //añadido del ciclo de estadistica para una probabilidad al vector 
 }
+
 void print_stat (std::vector<statistics> & stat_vect, float prob, unsigned int N){
   std::string fname="stats_Nsize_" + std::to_string(N) +".txt";
   std::ofstream fout(fname, std::ofstream::out);
@@ -31,48 +32,44 @@ void print_system (int seed, unsigned int N, float prob, const Eigen::MatrixXi &
   std::string fname="data_" + std::to_string(N) +"_" + std::to_string(prob) + "_" + std::to_string(seed) + ".txt";
   std::ofstream fout(fname, std::ofstream::out);
 
-  fout<<X<<"\n";
+  fout<<X<<"\n \n"<< "id \t"<< "size \n";
   
-  // fout<<X<<"\n \n"<< "id \t"<< "size \n";
-  /*
   for (const auto cluster : cl_att_vect){
-     fout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<"\t"<<cluster.percolate<<"\n";
+    fout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<"\t"<<cluster.percolate<<"\n";
   }
-  */
   fout.close();
 }
+
 
 void cluster_series_generate (int seed, unsigned int N, float prob, std::vector<cluster_attributes> & cl_att_vect, double * percol_a )
 {
   Eigen::MatrixXi X (N,N);
   std::vector<bool> visited (X.size(), false); //generacion de un vector tamaño nxn tipo bool que se usa como check para el dfs
-
+  //std::vector<cluster_attributes> cl_att_vect;
   percolate_tf perc; //declaracion de un struct auxiliar que indica si hubo percolacion
   randomly_fill_matrix (X, prob, seed, visited);
   dfs (X, visited, perc, cl_att_vect);
-  print_system (seed, N, prob, X, cl_att_vect);
-  /*
-  std::vector<cluster_attributes> cl_att_vect;
+
+  //print_system (seed, N, prob, X, cl_att_vect);
+
   
-  std::cout<< X <<"\n"<< std::endl;
+  /*std::cout<< X <<"\n"<< std::endl;
    std::cout<<"id \t"<< "size \t"<<std::endl;
       
   for (const auto cluster : cl_att_vect){
     std::cout<<cluster.cluster_id<<"\t"<<cluster.cluster_size<<"\t"<<cluster.percolate<<std::endl;
     }
-  std::cout<<"percola:"<<perc.aux_perc<<std::endl;
- */
 
   if (perc.aux_perc==true){
     percol_a[seed] = 1;
-  }
+    }
         
- 
+    std::cout<<"percola:"<<perc.aux_perc<<std::endl;*/
       std::vector<bool>().swap(visited); //forma sugerida por google para liberar la memoria de un vector
      
 }
 
-double largest_perc_cluster(std::vector<cluster_attributes> cl_att_v)
+double largest_perc_cluster(std::vector<cluster_attributes>  cl_att_v)
 {
   double max=0;
   for (const auto cluster : cl_att_v)
@@ -125,29 +122,41 @@ void dfs (Eigen::MatrixXi & M, std::vector<bool> & visit, percolate_tf & perc, s
 	  cl_att.cluster_size = 0;
 	  cl_att.percolate = 0;  // inizaliacion del contador de tamaño
 	  cl_att.cluster_id+=1; //cambio del id del cluster
-	  int col_coef = i/M.cols(); //conversion de la posicion actual i a (n , m)
-	  int row_coef = i%M.rows();
-	  
-	  dfs_aux(M, visit, col_coef, row_coef,  i, perc, cl_att);//llamado al explorador de clusters
 
+	  std::vector<int> dfs_buff;   
+	  dfs_buff.push_back (i);
+	  int buf = i;
+	  do{
+	    int col_coef = buf/M.cols(); //conversion de la posicion actual i a (n , m)
+	    int row_coef = buf%M.rows();
+	    dfs_aux(M, visit, col_coef, row_coef, buf, perc, cl_att, dfs_buff);//llamado al explorador de clusters
+	    buf = dfs_buff.back();
+	    dfs_buff.pop_back ();
+	    /* if ( (buf%M.rows()) !=0){
+	    std::sort(dfs_buff.begin(), dfs_buff.end());
+	    std::reverse(dfs_buff.begin(), dfs_buff.end());
+	    }*/
+	  }while (dfs_buff.size() != 0);
 	  cl_att_vect.push_back (cl_att);
-	  
+	  std::vector<int>().swap(dfs_buff);
 	}
+
+	  
+	  
+    
       else continue;
     }
 }
 	  
 
-void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int array_coef, percolate_tf & perc, cluster_attributes & cl_att)
+void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n , int m, int array_coef, percolate_tf & perc, cluster_attributes & cl_att, std::vector<int> & dfs_buff)
 {
-  if(n < 0 || n >= M.cols() || m < 0 || m >= M.rows()) //condicion para las fronteras de la matriz
-    {
-      return;
-    }
 
-  if(visit[array_coef] == true){ //evita las casillas visitadas   
-      return;
-    }
+
+  /* if(visit[array_coef] == true){ //evita las casillas visitadas   
+     return;
+     }*/
+
   if( M(n,m) == cl_att.cluster_id ) {
       return;
     }
@@ -167,7 +176,8 @@ void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int 
   if ((perc.aux_left && perc.aux_right) || (perc.aux_top && perc.aux_bottom) == true) {
       perc.aux_perc = true; //global
       cl_att.percolate = 1; //indica si se encontró un cluster percolante
-    }
+  }
+  
   
   visit[array_coef] = true; //escribe la casilla como visitada
   
@@ -175,12 +185,39 @@ void dfs_aux (Eigen::MatrixXi & M, std::vector<bool> & visit, int n, int m, int 
   
   cl_att.cluster_size += 1; //añade 1 al tamaño cada vez que se cumple la orden
 
+    // dfs_aux (M, visit, n-1, m, array_coef-M.cols(), perc, cl_att);
+  if (array_coef+M.cols() < visit.size()){
+  if (visit[array_coef+M.cols()] == false){
+    dfs_buff.push_back (array_coef + M.cols());
+    visit[array_coef+M.cols()] = true;
+  }
+  }
 
-  dfs_aux (M, visit, n, m+1, array_coef+1, perc, cl_att);
-  dfs_aux (M, visit, n, m-1, array_coef-1, perc, cl_att);
-  dfs_aux (M, visit, n-1, m, array_coef-M.cols(), perc, cl_att);
-  dfs_aux (M, visit, n+1, m, array_coef+M.cols(), perc, cl_att);
+  // dfs_aux (M, visit, n+1, m, array_coef+M.cols(), perc, cl_att);
+  if ( (array_coef-M.cols()) > 0){
+  if (visit[array_coef-M.cols()] == false){
+    dfs_buff.push_back (array_coef - M.cols());
+    visit[array_coef-M.cols()] = true;
+  }
+  }
+  
+  //dfs_aux (M, visit, n, m+1, array_coef+1, perc, cl_att);
+  if (array_coef-1 > 0){
+  if (visit[array_coef-1] == false){
+    dfs_buff.push_back (array_coef - 1);
+    visit[array_coef-1] = true;
+  }
+  }
 
+
+  //dfs_aux (M, visit, n, m-1, array_coef-1, perc, cl_att);
+  if (array_coef+1 < visit.size()){
+  if (visit[array_coef+1] == false){
+    dfs_buff.push_back (array_coef + 1);
+    visit[array_coef+1] = true;
+  }
+  }
+  
 
   //^^ busca en las casillas adyacentes
 }
