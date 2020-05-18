@@ -15,6 +15,9 @@ main1.x: project.o main1.o
 project_test: project_test.cpp
 	g++ -c $^ -o $@ 
 
+figures: plot2.128_0.570000_10.pg plot2.128_0.580000_10.pg plot2.128_0.590000_10.pg plot2.512_0.550000_11.pg plot2.512_0.550000_9.pg
+	gnuplot $^
+
 plot1.png: plot1.gp
 	gnuplot plot1.gp
 

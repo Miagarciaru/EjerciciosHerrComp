@@ -1,7 +1,7 @@
 set term pngcairo size 1280, 960	
-set out 'imagedata_128_0.580000_10.png'
-set xrange [0:128]
-set yrange [128:0]
+set out 'imagen-clusters.png'
+set xrange [0:20]
+set yrange [20:0]
 #set key right
 #rgb(r, g, b)=int(255*r)*65536+int(255*g)*256+int(255*b)
 #do for [i=2:11732]{
@@ -10,4 +10,4 @@ set yrange [128:0]
 #}
 #set palette rgbformula 30,31,32
 set palette defined (0 "black",2 "red", 750 "green", 1500 "blue", 2000 "yellow")
-plot 'data_128_0.580000_10.txt' matrix with image
+plot 'exampledata.txt' matrix with image
