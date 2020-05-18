@@ -1,5 +1,8 @@
 all: project.o main1.o main1.x plot1.png plot2.png
 
+timer: pruebatimers.cpp
+	g++ -fconcepts -Wall -fsanitize=undefined -fsanitize=address $^ -o timer.x -lgsl -lgslcblas
+
 project.o: project.cpp
 	g++ -c $^ -o $@
 
@@ -7,7 +10,7 @@ main1.o: main1.cpp
 	g++ -c $^ -o $@
 
 main1.x: project.o main1.o
-	g++ -std=c++11 -Wall -fsanitize=address -fsanitize=undefined $^ -o $@ -lgsl -lgslcblas
+	g++ -fconcepts -std=c++11 -Wall -fsanitize=address -fsanitize=undefined $^ -o $@ -lgsl -lgslcblas
 
 project_test: project_test.cpp
 	g++ -c $^ -o $@ 
