@@ -1,0 +1,6 @@
+set term pngcairo size 1280, 960	
+set out 'imagedata_128_0.590000_10.png'
+set xrange [0:128]
+set yrange [128:0]
+set palette rgbformula 30,31,32
+plot 'data_128_0.590000_10.txt' matrix with image
