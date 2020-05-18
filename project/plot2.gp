@@ -4,7 +4,6 @@ set title "Probabilidad de Percolación en función de la probabilidad de llenad
 set key box
 set xlabel 'Probabilidad de llenado p' font "Arial, 16"
 set ylabel 'Cantidad de cluster normalizado s(p, L)' font "Arial, 16"
-#set yrange [0:1.2]
 set key bottom left box #posiciona la tabla del título
 set key width 1 #Deja un espacio para el título dentro de la caja
 set key font "Arial, 16" #Cambia la fuente del título por Arial y el tamaño por 16
