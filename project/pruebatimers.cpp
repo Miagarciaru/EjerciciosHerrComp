@@ -47,14 +47,13 @@ int main(void)
   std::vector<statistics> stat_vect;
   for (int i = 5; i<= 9; i++)
     {
+      auto start = std::chrono::steady_clock::now();
       N = std::pow(2,i);
       float prob = 0.0;
       double * larg_cl= new double[sample_size] {0.0}; //array para los clusters percolantes mas grandes de cada matriz (normalizado)
       double * percol_a= new double[sample_size] {0.0};//array para la percolacion de matrices
       while (prob <= 1.0)
 	{
-	  
-	 auto start = std::chrono::steady_clock::now();
 	  
 	  if (prob < 0.53){
 	    prob += 0.054;
@@ -78,12 +77,14 @@ int main(void)
       
 	    }
 	  gen_stat(larg_cl, percol_a, sample_size, prob, stat_vect, N);
-    
-    auto end = std::chrono::steady_clock::now();
-
-    print_elapsed(start, end);
 
 	}
+
+      auto end = std::chrono::steady_clock::now();
+
+      std::cout<<N<<std::endl;
+      print_elapsed(start, end);
+
       delete [] larg_cl;
       delete [] percol_a;
     }
