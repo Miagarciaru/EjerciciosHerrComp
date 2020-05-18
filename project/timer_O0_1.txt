@@ -1,0 +1,10 @@
+32
+Elapsed time in ms: 286
+64
+Elapsed time in ms: 1111
+128
+Elapsed time in ms: 4620
+256
+Elapsed time in ms: 18435
+512
+Elapsed time in ms: 74227
