@@ -15,14 +15,8 @@ main1.x: project.o main1.o
 project_test: project_test.cpp
 	g++ -c $^ -o $@ 
 
-figures: plot2.128_0.570000_10.pg plot2.128_0.580000_10.pg plot2.128_0.590000_10.pg plot2.512_0.550000_11.pg plot2.512_0.550000_9.pg
+figures: probperc.pg probpercred.gp cantclus.gp plottimers.gp plot2.128_0.570000_10.pg plot2.128_0.580000_10.pg plot2.128_0.590000_10.pg plot2.128_0.600000_10.pg plot2.512_0.550000_11.pg plot2.512_0.550000_9.pg 
 	gnuplot $^
-
-plot1.png: plot1.gp
-	gnuplot plot1.gp
-
-plot2.png: plotfigure.gp
-	gnuplot plotfigure.gp
 
 test: main_project.o project_test.o
 	g++ -std=c++11 -Wall -fsanitize=address -fsanitize=undefined $^ -o project_test.o -lgsl -lgslcblas
@@ -31,4 +25,4 @@ valgrind: main1.x
 	valgrind --tool=memcheck --leak-check=yes ./main_project.x
 
 clean:
-	-rm -f *~ *# *o *out *x *txt
+	-rm -f *~ *# *o *out *x 
