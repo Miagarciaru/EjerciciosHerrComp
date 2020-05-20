@@ -20,3 +20,4 @@ valgrind: main_project.x
 
 clean:
 	-rm -f *~ *# *o *out *x 
+ s: 
