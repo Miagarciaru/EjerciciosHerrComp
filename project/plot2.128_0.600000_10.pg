@@ -2,5 +2,5 @@ set term pngcairo size 1280, 960
 set out 'imagedata_128_0.600000_10.png'
 set xrange [0:128]
 set yrange [128:0]
-set palette defined (0 "black",2 "red", 750 "green", 1500 "blue", 2000 "yellow")
+set palette defined (0 "black", 2 "red", 1500 "green", 3000 "blue", 4500 "yellow", 6000 "cyan", 7500 "light-green", 9000 "coral", 10500 "orange", 12000 "dark-goldenrod", 13500 "light-magenta", 15000 "brown")
 plot 'data_128_0.600000_10.txt' matrix with image
